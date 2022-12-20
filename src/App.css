@@ -21,3 +21,39 @@
   justify-content: center;
   font-size: 3rem;
 }
+
+.keto {
+  background-image: url("images/keto.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.vegan {
+  background-image: url("images/vegan.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.vegetarian {
+  background-image: url("images/vegetarian.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.gluten-free {
+  background-image: url("images/indian.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
