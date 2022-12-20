@@ -1,11 +1,11 @@
 import React from "react";
 
-const Login = () => {
+const Vegan = () => {
   return (
     <>
-      <h1 className="vegan">login</h1>
+      <h1 className="vegan">Vegan</h1>
     </>
   );
 };
 
-export default Login;
+export default Vegan;

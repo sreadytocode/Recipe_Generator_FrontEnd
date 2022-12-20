@@ -9,8 +9,9 @@ import Keto from "./components/navigation/pages/Keto";
 import Login from "./components/navigation/pages/Login";
 import Vegetarian from "./components/navigation/pages/Vegetarian";
 import Vegan from "./components/navigation/pages/Vegan";
+import Cuisine from "./components/navigation/pages/Cuisine";
 
-//exact matche the excat path of the url
+//exact matches the exact path of the url
 
 function App() {
   return (
@@ -20,11 +21,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/gluten-free" element={<GlutenFree />} />
-        <Route path="/keto" element={<Keto />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/vegetarian" element={<Vegetarian />} />
-        <Route path="/vegan" element={<Vegan />} />
+        <Route path="/cuisine" element={<Cuisine />} />
+        <Route path="gluten-free" exact element={<GlutenFree />} />
+        <Route path="keto" exact element={<Keto />} />
+        <Route path="vegetarian" exact element={<Vegetarian />} />
+        <Route path="vegan" exact element={<Vegan />} />
       </Routes>
     </Router>
   );

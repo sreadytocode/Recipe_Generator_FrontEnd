@@ -13,7 +13,8 @@
 .keto,
 .login,
 .vegan,
-.vegetarian {
+.vegetarian,
+.cuisine {
   display: flex;
   height: 90vh;
   align-items: center;
