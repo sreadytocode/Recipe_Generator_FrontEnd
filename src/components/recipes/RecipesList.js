@@ -1,9 +1,9 @@
 import React from "react";
 import Recipe from "./Recipe";
+import styled from "styled-components";
 
 const RecipesList = ({ recipes }) => {
   const recipeComponents = recipes.map((recipe) => {
-    console.log(recipe);
     return (
       <div key={recipe.id}>
         <Recipe recipe={recipe} />

@@ -8,12 +8,12 @@
 }
 
 .dropdown-menu li {
-  background: #1888ff;
+  background: #009f4f;
   cursor: pointer;
 }
 
 .dropdown-menu li:hover {
-  background: #5cabff;
+  background: #59bd8b;
 }
 
 .dropdown-menu.clicked {

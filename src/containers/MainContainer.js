@@ -11,6 +11,7 @@ import Vegetarian from "../components/navigation/pages/Vegetarian";
 import Vegan from "../components/navigation/pages/Vegan";
 import Cuisine from "../components/navigation/pages/Cuisine";
 import recipesData from "../dummyData/RecipesData";
+import SearchBarTest from "../components/SearchTest/SearchBarTest";
 
 const MainContainer = () => {
   //Store dummy data in state
@@ -19,6 +20,7 @@ const MainContainer = () => {
   return (
     <Router>
       <Navbar />
+      <SearchBarTest />
       <Routes>
         <Route path="/" element={<Home recipes={recipes} />} />
         <Route path="/about" element={<About />} />

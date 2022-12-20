@@ -1,7 +1,7 @@
 const recipesData = [
   {
     id: 1,
-    name: "Spagehetti Bolognese",
+    name: "Spaghetti Bolognese",
     calories: 297,
     rating: 4,
     image: "spaghetti_bolognese.jpeg",
