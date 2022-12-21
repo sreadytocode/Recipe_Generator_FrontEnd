@@ -1,4 +1,5 @@
 import React from "react";
+import RecipeRating from "../reusable/RecipeRating";
 import styled from "styled-components";
 
 //Box to conatain all recipe information
@@ -28,9 +29,16 @@ const RecipeImage = styled.img`
 `;
 const RecipeInfoContainer = styled.div`
   background-color: #d9d9d9;
+  align-items: center;
   display: flex;
   gap: 2rem;
   padding: 0.75rem;
+`;
+
+const RatingContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 `;
 
 const Recipe = ({ recipe }) => {
@@ -45,13 +53,10 @@ const Recipe = ({ recipe }) => {
         alt="recipe"
       />
       <RecipeInfoContainer>
-        <p>
-          Rating: {recipe.rating}
-          <i className="fas fa-sharp fa-solid fa-star"></i>
-          <i className="fas fa-sharp fa-solid fa-star"></i>
-          <i className="fas fa-sharp fa-solid fa-star"></i>
-          <i className="fas fa-sharp fa-solid fa-star"></i>
-        </p>
+        <RatingContainer>
+          <p>Rating:</p>
+          <RecipeRating recipeRating={recipe.rating} />
+        </RatingContainer>
         <p>Calories: {recipe.calories}</p>
       </RecipeInfoContainer>
     </RecipeCard>

@@ -13,12 +13,14 @@ const RecipesContainer = styled.div`
 
 const Home = ({ recipes }) => {
   return (
-    <div>
-      <Title text = {"Our Top Rated Recipes"} />
+    <>
+      <div className="home">
+        <Title text={"Our Top Rated Recipes"} />
+      </div>
       <RecipesContainer>
         <RecipesList recipes={recipes} />
       </RecipesContainer>
-    </div>
+    </>
   );
 };
 
