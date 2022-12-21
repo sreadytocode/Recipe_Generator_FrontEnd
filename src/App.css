@@ -16,10 +16,17 @@
 .vegetarian,
 .cuisine {
   display: flex;
-  height: 90vh;
+  height: 20vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+}
+
+.home {
+  background-image: url("images/food_pattern.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .keto {
