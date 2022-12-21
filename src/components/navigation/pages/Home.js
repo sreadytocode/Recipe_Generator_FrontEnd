@@ -1,6 +1,7 @@
 import React from "react";
 import RecipesList from "../../recipes/RecipesList";
 import styled from "styled-components";
+import Title from "../../reusable/Title";
 
 const RecipesContainer = styled.div`
   display: flex;
@@ -12,12 +13,12 @@ const RecipesContainer = styled.div`
 
 const Home = ({ recipes }) => {
   return (
-    <>
-      <h1 className="home">Our Top Rated Recipes</h1>
+    <div>
+      <Title text = {"Our Top Rated Recipes"} />
       <RecipesContainer>
         <RecipesList recipes={recipes} />
       </RecipesContainer>
-    </>
+    </div>
   );
 };
 
