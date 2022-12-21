@@ -4,11 +4,7 @@ import styled from "styled-components";
 
 const RecipesList = ({ recipes }) => {
   const recipeComponents = recipes.map((recipe) => {
-    return (
-      <div key={recipe.id}>
-        <Recipe recipe={recipe} />
-      </div>
-    );
+    return <Recipe key={recipe.id} recipe={recipe} />;
   });
 
   return <>{recipeComponents}</>;

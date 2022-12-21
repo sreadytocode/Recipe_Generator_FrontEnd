@@ -4,7 +4,6 @@ import styled from "styled-components";
 //Box to conatain all recipe information
 const RecipeCard = styled.div`
   width: 20rem;
-  justify-content: center;
   position: relative;
 `;
 
@@ -25,6 +24,7 @@ const RecipeTitle = styled.h3`
 //Set the width of the image to take up 100% of it's container
 const RecipeImage = styled.img`
   width: 100%;
+  display: flex;
 `;
 const RecipeInfoContainer = styled.div`
   background-color: #d9d9d9;
@@ -39,12 +39,19 @@ const Recipe = ({ recipe }) => {
       <RecipeTitleContainer>
         <RecipeTitle>{recipe.name}</RecipeTitle>
       </RecipeTitleContainer>
+
       <RecipeImage
         src={require("../../dummyData/recipe_images/" + recipe.image)}
         alt="recipe"
       />
       <RecipeInfoContainer>
-        <p>Rating: {recipe.rating}</p>
+        <p>
+          Rating: {recipe.rating}
+          <i className="fas fa-sharp fa-solid fa-star"></i>
+          <i className="fas fa-sharp fa-solid fa-star"></i>
+          <i className="fas fa-sharp fa-solid fa-star"></i>
+          <i className="fas fa-sharp fa-solid fa-star"></i>
+        </p>
         <p>Calories: {recipe.calories}</p>
       </RecipeInfoContainer>
     </RecipeCard>
