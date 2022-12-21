@@ -11,9 +11,15 @@ import Vegetarian from "./components/navigation/pages/Vegetarian";
 import Vegan from "./components/navigation/pages/Vegan";
 import Cuisine from "./components/navigation/pages/Cuisine";
 
+
+import React, {useState} from "react";
+
 //exact matches the exact path of the url
 
 function App() {
+
+
+
   return (
     <Router>
       <Navbar />
