@@ -1,10 +1,12 @@
 import React from "react";
 
+import Title from "../../reusable/Title";
+
 const GlutenFree = () => {
   return (
-    <>
-      <h1 className="gluten-free">GlutenFree</h1>
-    </>
+    <div className="gluten-free">
+      <Title text = {"GlutenFree"} />
+    </div>
   );
 };
 
