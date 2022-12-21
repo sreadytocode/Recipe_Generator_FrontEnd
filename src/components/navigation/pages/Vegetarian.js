@@ -1,10 +1,12 @@
 import React from "react";
 
+import Title from "../../reusable/Title";
+
 const Vegetarian = () => {
   return (
-    <>
-      <h1 className="vegetarian">Vegetarian</h1>
-    </>
+    <div className="vegetarian">
+      <Title text = {"Vegetarian"} />
+    </div>
   );
 };
 

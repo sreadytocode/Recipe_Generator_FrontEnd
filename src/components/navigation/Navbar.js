@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "./Button";
+import { Button } from "../reusable/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const closeMobileMenu = () => setClick(false);
 
-  //When the viewport is less than 960 then the dropdown will
+  //When the viewport is less than 960 then the dropdown will not be vissible
   const onMouseEnter = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -58,7 +58,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
-
+          {/* Dropdown menu start here */}
           <li
             className="nav-item"
             onMouseEnter={onMouseEnter}

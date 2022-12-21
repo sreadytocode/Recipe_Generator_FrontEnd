@@ -1,10 +1,12 @@
 import React from "react";
 
+import Title from "../../reusable/Title" 
+
 const Contact = () => {
   return (
-    <>
-      <h1 className="contact">Contact</h1>
-    </>
+    <div className="contact">
+      <Title text = {"Contact"}/>
+    </div>
   );
 };
 
