@@ -25,6 +25,7 @@ const RecipeTitle = styled.h3`
 //Set the width of the image to take up 100% of it's container
 const RecipeImage = styled.img`
   width: 100%;
+  height: 11rem;
   display: flex;
 `;
 const RecipeInfoContainer = styled.div`
@@ -48,16 +49,13 @@ const Recipe = ({ recipe }) => {
         <RecipeTitle>{recipe.name}</RecipeTitle>
       </RecipeTitleContainer>
 
-      <RecipeImage
-        src={require("../../dummyData/recipe_images/" + recipe.image)}
-        alt="recipe"
-      />
+      <RecipeImage src={recipe.image} alt="recipe" />
       <RecipeInfoContainer>
         <RatingContainer>
           <p>Rating:</p>
           <RecipeRating recipeRating={recipe.rating} />
         </RatingContainer>
-        <p>Calories: {recipe.calories}</p>
+        {/* <p>Calories: {recipe.calories}</p> */}
       </RecipeInfoContainer>
     </RecipeCard>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../components/navigation/Navbar";
 import About from "../components/navigation/pages/About";
@@ -15,8 +15,15 @@ import RecipePage from "../components/navigation/pages/RecipePage";
 import SearchBarTest from "../components/SearchTest/SearchBarTest";
 
 const MainContainer = () => {
-  //Store dummy data in state
-  const [recipes, setRecipes] = useState(recipesData);
+  // const [recipes, setRecipes] = useState(recipesData);
+
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/recipes")
+      .then((res) => res.json())
+      .then((recipeData) => setRecipes(recipeData));
+  }, []);
 
   return (
     <Router>
