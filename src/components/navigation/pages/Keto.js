@@ -5,7 +5,7 @@ import Title from "../../reusable/Title";
 const Keto = () => {
   return (
     <div className="keto">
-      <Title text = {"Keto"} />
+      <Title text={"Keto"} />
     </div>
   );
 };
