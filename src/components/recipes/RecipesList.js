@@ -1,10 +1,16 @@
 import React from "react";
 import Recipe from "./Recipe";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const RecipesList = ({ recipes }) => {
   const recipeComponents = recipes.map((recipe) => {
-    return <Recipe key={recipe.id} recipe={recipe} />;
+    return (
+      <>
+        <Link to={`/recipe/${recipe.id}`}>
+          <Recipe key={recipe.id} recipe={recipe} />
+        </Link>
+      </>
+    );
   });
 
   return <>{recipeComponents}</>;
