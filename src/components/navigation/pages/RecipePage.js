@@ -2,7 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import RecipeRating from "../../reusable/RecipeRating";
-import RecipeIngredients from "../../recipes/RecipeIngredients";
+import RecipeInstructions from "../../recipes/RecipeInstructions";
+import RecipeQuantities from "../../recipes/RecipeQuantities";
+// import RecipeIngredients from "../../recipes/RecipeIngredients";
 
 //Container for all recipe information
 const RecipeSection = styled.section`
@@ -40,30 +42,23 @@ const RecipeDescription = styled.div`
   width: 60%;
 `;
 
-const RecipePage = ({ recipes, ingredients }) => {
+const RecipePage = ({ recipes }) => {
   let { id } = useParams();
   id = Number(id);
 
   const recipe = recipes.find((recipe) => recipe.id === id);
-  console.log(recipe);
+  console.log(recipe.instructions);
 
   return (
     <RecipeSection>
       <h1>{recipe.name}</h1>
       <RecipeRating recipeRating={recipe.rating} />
-      <p>
-        {recipe.cuisineType} {recipe.mealType.toLowerCase()}
-      </p>
+      <p>Region: {recipe.cuisineType}</p>
+      <p>Ideal to have for {recipe.mealType}</p>
       <RecipeImage src={recipe.image} alt="recipe" />
-
       <RecipeDescription>{recipe.description}</RecipeDescription>
-
-      <RecipeIngredients ingredients={ingredients} />
-
-      <RecipeCaloriesCircle>
-        <h4>Servings</h4>
-        <NumberOfServings>{recipe.serving}</NumberOfServings>
-      </RecipeCaloriesCircle>
+      <RecipeQuantities quantities={recipe.quantities}></RecipeQuantities>
+      <RecipeInstructions instructions={recipe.instructions} />
     </RecipeSection>
   );
 };

@@ -32,8 +32,6 @@ const MainContainer = () => {
       .then((ingredientsData) => setIngredients(ingredientsData));
   }, []);
 
-  console.log(ingredients);
-
   return (
     <Router>
       <Navbar />
