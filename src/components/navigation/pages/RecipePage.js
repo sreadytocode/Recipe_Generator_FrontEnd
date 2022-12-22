@@ -12,14 +12,19 @@ const RecipeSection = styled.section`
   margin: 6rem auto 0;
 `;
 
+const RecipeInfoPanel = styled.div`
+  display: flex;
+`;
+
 const RecipeImage = styled.img`
-  margin-top: 2rem;
   width: 60%;
+  margin-right: 2rem;
+  align-self: flex-start;
   border-bottom: 6px solid #009f4f;
 `;
 
 const RecipeCaloriesCircle = styled.div`
-  margin-top: 2rem;
+  margin: 0 0 1rem 1rem;
   border: 3px solid #009f4f;
   border-radius: 50%;
   width: 6rem;
@@ -42,22 +47,46 @@ const RecipeDescription = styled.div`
   width: 60%;
 `;
 
-const RecipePage = ({ recipes }) => {
-  let { id } = useParams();
-  id = Number(id);
+const ImageInstructionsContainer = styled.div`
+  display: flex;
+`;
 
+const RecipePage = ({ recipes }) => {
+  //Use params gets the individual id from the url
+  let { id } = useParams();
+  //Use params returns a string so we need to change the id into a Number
+  id = Number(id);
+  //The param number is compared to the recipe.id using find method.
   const recipe = recipes.find((recipe) => recipe.id === id);
-  console.log(recipe.instructions);
 
   return (
     <RecipeSection>
-      <h1>{recipe.name}</h1>
-      <RecipeRating recipeRating={recipe.rating} />
-      <p>Region: {recipe.cuisineType}</p>
-      <p>Ideal to have for {recipe.mealType}</p>
-      <RecipeImage src={recipe.image} alt="recipe" />
+      <RecipeInfoPanel>
+        <div>
+          <h1>{recipe.name}</h1>
+          <RecipeRating recipeRating={recipe.rating} />
+          <div>
+            <p>
+              Cuisine: <b>{recipe.cuisineType}</b>
+            </p>
+            <p>
+              <b>Ideal to have for {recipe.mealType}</b>
+            </p>
+          </div>
+        </div>
+        <RecipeCaloriesCircle>
+          <p>Servings</p>
+          <NumberOfServings>{recipe.serving}</NumberOfServings>
+        </RecipeCaloriesCircle>
+      </RecipeInfoPanel>
+
+      <ImageInstructionsContainer>
+        <RecipeImage src={recipe.image} alt="recipe" />
+        <RecipeQuantities quantities={recipe.quantities}></RecipeQuantities>
+      </ImageInstructionsContainer>
+
       <RecipeDescription>{recipe.description}</RecipeDescription>
-      <RecipeQuantities quantities={recipe.quantities}></RecipeQuantities>
+
       <RecipeInstructions instructions={recipe.instructions} />
     </RecipeSection>
   );
