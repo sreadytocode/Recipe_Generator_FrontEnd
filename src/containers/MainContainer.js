@@ -10,7 +10,6 @@ import Login from "../components/navigation/pages/Login";
 import Vegetarian from "../components/navigation/pages/Vegetarian";
 import Vegan from "../components/navigation/pages/Vegan";
 import Cuisine from "../components/navigation/pages/Cuisine";
-import recipesData from "../dummyData/RecipesData";
 import RecipePage from "../components/navigation/pages/RecipePage";
 import SearchBarTest from "../components/SearchTest/SearchBarTest";
 
@@ -25,13 +24,26 @@ const MainContainer = () => {
       .then((recipeData) => setRecipes(recipeData));
   }, []);
 
+  const [ingredients, setIngredients] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/ingredients")
+      .then((res) => res.json())
+      .then((ingredientsData) => setIngredients(ingredientsData));
+  }, []);
+
+  console.log(ingredients);
+
   return (
     <Router>
       <Navbar />
       <SearchBarTest />
       <Routes>
         <Route path="/" exact element={<Home recipes={recipes} />} />
-        <Route path="/recipe/:id" element={<RecipePage recipes={recipes} />} />
+        <Route
+          path="/recipe/:id"
+          element={<RecipePage recipes={recipes} ingredients={ingredients} />}
+        />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
