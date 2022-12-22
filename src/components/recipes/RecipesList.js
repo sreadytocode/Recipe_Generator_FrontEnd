@@ -6,7 +6,9 @@ const RecipesList = ({ recipes }) => {
   const recipeComponents = recipes.map((recipe) => {
     return (
       <>
-        <Recipe key={recipe.id} recipe={recipe} />
+        <Link to={`/recipe/${recipe.id}`}>
+          <Recipe key={recipe.id} recipe={recipe} />
+        </Link>
       </>
     );
   });

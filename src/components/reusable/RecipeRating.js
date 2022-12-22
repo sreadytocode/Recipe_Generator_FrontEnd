@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const StarRatingContainer = styled.div``;
@@ -6,7 +6,6 @@ const StarRatingContainer = styled.div``;
 const RecipeRating = ({ recipeRating }) => {
   //   const stars = new Array(recipeRating);
   //   console.log(stars);
-  const [rating, setRating] = useState(0);
 
   return (
     <StarRatingContainer>

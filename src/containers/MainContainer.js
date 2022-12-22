@@ -11,6 +11,7 @@ import Vegetarian from "../components/navigation/pages/Vegetarian";
 import Vegan from "../components/navigation/pages/Vegan";
 import Cuisine from "../components/navigation/pages/Cuisine";
 import recipesData from "../dummyData/RecipesData";
+import RecipePage from "../components/navigation/pages/RecipePage";
 import SearchBarTest from "../components/SearchTest/SearchBarTest";
 
 const MainContainer = () => {
@@ -22,7 +23,8 @@ const MainContainer = () => {
       <Navbar />
       <SearchBarTest />
       <Routes>
-        <Route path="/" element={<Home recipes={recipes} />} />
+        <Route path="/" exact element={<Home recipes={recipes} />} />
+        <Route path="/recipe/:id" element={<RecipePage recipes={recipes} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
