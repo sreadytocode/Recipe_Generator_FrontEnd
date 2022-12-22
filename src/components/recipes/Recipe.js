@@ -43,6 +43,8 @@ const RatingContainer = styled.div`
 `;
 
 const Recipe = ({ recipe }) => {
+  console.log(recipe.quantities);
+
   return (
     <RecipeCard>
       <RecipeTitleContainer>
@@ -55,6 +57,7 @@ const Recipe = ({ recipe }) => {
           <p>Rating:</p>
           <RecipeRating recipeRating={recipe.rating} />
         </RatingContainer>
+
         <p>Servings: {recipe.serving}</p>
       </RecipeInfoContainer>
     </RecipeCard>

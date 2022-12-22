@@ -40,7 +40,7 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <Link to="/">
-          <img src="../../images/logo.svg" alt="logo" />
+          <img src={Logo} alt="logo" width="150" />
         </Link>
 
         <div className="menu-icon" onClick={handleClick}>
