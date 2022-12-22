@@ -28,11 +28,11 @@ const RecipeCaloriesCircle = styled.div`
   flex-direction: column;
 `;
 
-const NumberOfCalories = styled.p`
-  font-size: 2rem;
-  font-weight: 600;
-  color: #009f4f;
-`;
+// const NumberOfCalories = styled.p`
+//   font-size: 2rem;
+//   font-weight: 600;
+//   color: #009f4f;
+// `;
 
 const RecipeDescription = styled.div`
   margin-top: 2rem;
@@ -49,14 +49,12 @@ const RecipePage = ({ recipes }) => {
     <RecipeSection>
       <h1>{recipe.name}</h1>
       <RecipeRating recipeRating={recipe.rating} />
-      <RecipeImage
-        src={require("../../../dummyData/recipe_images/" + recipe.image)}
-        alt="recipe"
-      />
+      <RecipeImage src={recipe.image} alt="recipe" />
+
       <RecipeDescription>{recipe.description}</RecipeDescription>
       <RecipeCaloriesCircle>
         <h4>Calories</h4>
-        <NumberOfCalories>{recipe.calories}</NumberOfCalories>
+        {/* <NumberOfCalories>{recipe.calories}</NumberOfCalories> */}
       </RecipeCaloriesCircle>
     </RecipeSection>
   );
