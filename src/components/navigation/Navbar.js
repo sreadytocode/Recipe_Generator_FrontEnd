@@ -3,6 +3,7 @@ import { Button } from "../reusable/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
+import Logo from "../../images/logo.svg";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -38,8 +39,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <Link to="/" className="navbar-logo">
-          EDAMAME
+        <Link to="/">
+          <img src="../../images/logo.svg" alt="logo" />
         </Link>
 
         <div className="menu-icon" onClick={handleClick}>

@@ -55,7 +55,7 @@ const Recipe = ({ recipe }) => {
           <p>Rating:</p>
           <RecipeRating recipeRating={recipe.rating} />
         </RatingContainer>
-        {/* <p>Calories: {recipe.calories}</p> */}
+        <p>Servings: {recipe.serving}</p>
       </RecipeInfoContainer>
     </RecipeCard>
   );

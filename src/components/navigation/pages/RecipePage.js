@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import RecipeRating from "../../reusable/RecipeRating";
+import RecipeIngredients from "../../recipes/RecipeIngredients";
 
 //Container for all recipe information
 const RecipeSection = styled.section`
@@ -28,33 +29,40 @@ const RecipeCaloriesCircle = styled.div`
   flex-direction: column;
 `;
 
-// const NumberOfCalories = styled.p`
-//   font-size: 2rem;
-//   font-weight: 600;
-//   color: #009f4f;
-// `;
+const NumberOfServings = styled.p`
+  font-size: 2rem;
+  font-weight: 600;
+  color: #009f4f;
+`;
 
 const RecipeDescription = styled.div`
   margin-top: 2rem;
   width: 60%;
 `;
 
-const RecipePage = ({ recipes }) => {
+const RecipePage = ({ recipes, ingredients }) => {
   let { id } = useParams();
   id = Number(id);
 
   const recipe = recipes.find((recipe) => recipe.id === id);
+  console.log(recipe);
 
   return (
     <RecipeSection>
       <h1>{recipe.name}</h1>
       <RecipeRating recipeRating={recipe.rating} />
+      <p>
+        {recipe.cuisineType} {recipe.mealType.toLowerCase()}
+      </p>
       <RecipeImage src={recipe.image} alt="recipe" />
 
       <RecipeDescription>{recipe.description}</RecipeDescription>
+
+      <RecipeIngredients ingredients={ingredients} />
+
       <RecipeCaloriesCircle>
-        <h4>Calories</h4>
-        {/* <NumberOfCalories>{recipe.calories}</NumberOfCalories> */}
+        <h4>Servings</h4>
+        <NumberOfServings>{recipe.serving}</NumberOfServings>
       </RecipeCaloriesCircle>
     </RecipeSection>
   );
