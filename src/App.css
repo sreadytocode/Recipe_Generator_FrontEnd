@@ -6,6 +6,12 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .home,
 .about,
 .contact,
