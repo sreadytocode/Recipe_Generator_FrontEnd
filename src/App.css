@@ -1,3 +1,6 @@
+/* Importing syncfusion */
+@import url('https://cdn.syncfusion.com/ej2/material.css');
+
 /* CSS reset and set font-family */
 * {
   box-sizing: border-box;

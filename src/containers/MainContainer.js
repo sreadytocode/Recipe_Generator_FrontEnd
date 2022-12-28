@@ -6,7 +6,7 @@ import Contact from "../components/navigation/pages/Contact";
 import GlutenFree from "../components/navigation/pages/GlutenFree";
 import Home from "../components/navigation/pages/Home";
 import Keto from "../components/navigation/pages/Keto";
-import Login from "../components/navigation/pages/Login";
+import Login from "../components/login/Login";
 import Vegetarian from "../components/navigation/pages/Vegetarian";
 import Vegan from "../components/navigation/pages/Vegan";
 import Cuisine from "../components/navigation/pages/Cuisine";
