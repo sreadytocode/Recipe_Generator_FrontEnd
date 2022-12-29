@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from "../../containers/Footer";
 import "./Login.css";
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import { MdOutlineCancel } from 'react-icons/md';
 
 import { LoginNavbar, Sidebar, UserProfile } from "./loginComponents";
 import { Calendar, ShoppingList } from "./loginpages";
-import Title from "../reusable/Title";
 
 const Login = () => {
   const activeMenu = true;
