@@ -34,7 +34,7 @@ const MainContainer = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <Router>
         <Navbar />
         <SearchBarTest />
@@ -55,7 +55,7 @@ const MainContainer = () => {
         </Routes>
       </Router>
       <Footer />
-    </>
+    </div>
   );
 };
 
