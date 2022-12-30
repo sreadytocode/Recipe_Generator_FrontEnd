@@ -1,7 +1,8 @@
 import React from "react";
-import { FiShoppingBag } from 'react-icons/fi';
 import { AiOutlineCalendar, AiOutlineShoppingCart } from 'react-icons/ai';
-import { IoMdContacts } from 'react-icons/io';
+import { CgProfile } from 'react-icons/cg';
+import { GiFruitBowl, GiElectric } from 'react-icons/gi';
+import { AiFillHeart } from 'react-icons/ai';
 
 export const links = [
     {
@@ -9,7 +10,7 @@ export const links = [
       links: [
         {
           name: 'profile',
-          icon: <IoMdContacts />,
+          icon: <CgProfile />,
         },
       ],
     },
@@ -18,12 +19,16 @@ export const links = [
       title: 'Pages',
       links: [
         {
+            name: 'favourite recipes',
+            icon: <AiFillHeart />,
+          },
+        {
           name: 'shopping list',
           icon: <AiOutlineShoppingCart />,
         },
         {
           name: 'pantry',
-          icon: <FiShoppingBag />,
+          icon: <GiFruitBowl />,
         },
       ],
     },
@@ -31,9 +36,13 @@ export const links = [
       title: 'Apps',
       links: [
         {
-          name: 'calendar',
+          name: 'meal planner',
           icon: <AiOutlineCalendar />,
         },
+        {
+            name: 'electricity calculator',
+            icon: <GiElectric />,
+          }
       ],
     },
   ];

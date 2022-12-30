@@ -15,7 +15,7 @@ const BottomFooter = styled.div`
 
 const Footer = () => {
   return (
-    <BottomFooter>
+    <BottomFooter >
       <p>Copyright &copy; Edamame Inc. 2023</p>
     </BottomFooter>
   );

@@ -2,19 +2,19 @@ import React, {useEffect} from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from "../../containers/Footer";
 import "./Login.css";
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-import { MdOutlineCancel } from 'react-icons/md';
 
 import { LoginNavbar, Sidebar, UserProfile } from "./loginComponents";
 import { Calendar, ShoppingList } from "./loginpages";
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 const Login = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+
   return (
     <div>
       {activeMenu ? (
-        <div className="w-500 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
-
+        <div className="w-550 absolute sidebar dark:bg-secondary-dark-bg bg-white">
           <Sidebar/>
       </div>
       ) : (
@@ -22,10 +22,11 @@ const Login = () => {
           <Sidebar/>
         </div>
       )}
-      <div className={activeMenu ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  ' : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '}>
-          {/* <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+      <div className={activeMenu ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full' : 'bg-main-bg dark:bg-main-dark-bg w-full min-h-screen flex-2'}>
+          <div className="absolute md:static bg-main-bg dark:bg-main-dark-bg">
+          {/* className="absolute md:static bg-main-bg dark:bg-main-dark-bg navbar w-full " */}
             <LoginNavbar/>
-          </div> */}
+          </div>
       </div>
       <div>
         <Routes>
@@ -34,7 +35,6 @@ const Login = () => {
           <Route path="/planner" element={<Calendar/>}/>
         </Routes>
       </div>
-      <Footer/>
     </div>
   );
 };
