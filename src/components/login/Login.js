@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from "../../containers/Footer";
 import "./Login.css";
 
-import { LoginNavbar, Sidebar, UserProfile } from "./loginComponents";
+import { LoginNavbar, Sidebar, Profile } from "./loginComponents";
 import { Calendar, ShoppingList } from "./loginpages";
 
 import { useStateContext } from "./contexts/ContextProvider";
@@ -22,18 +22,19 @@ const Login = () => {
           <Sidebar/>
         </div>
       )}
-      <div className={activeMenu ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full' : 'bg-main-bg dark:bg-main-dark-bg w-full min-h-full flex-center'}>
+      <div className={activeMenu ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full' : 'sticky bg-main-bg dark:bg-main-dark-bg w-full min-h-auto flex-10 sm:w-14 '}>
           <div className="absolute md:static bg-main-bg dark:bg-main-dark-bg min-h-auto">
           {/* className="absolute md:static bg-main-bg dark:bg-main-dark-bg navbar w-full " */}
             <LoginNavbar/>
           </div>
-      </div>
+      
       <div>
         <Routes>
-          <Route path="/profile" element={<UserProfile/>}/>
-          <Route path="/shoppinglist" element={<ShoppingList/>}/>
-          <Route path="/planner" element={<Calendar/>}/>
+          <Route path="/login/profile" element={<Profile/>}/>
+          <Route path="/login/shoppinglist" element={<ShoppingList/>}/>
+          <Route path="/login/planner" element={<Calendar/>}/>
         </Routes>
+        </div>
       </div>
     </div>
   );

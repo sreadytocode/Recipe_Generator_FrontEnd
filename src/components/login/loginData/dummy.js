@@ -3,6 +3,7 @@ import { AiOutlineCalendar, AiOutlineShoppingCart } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { GiFruitBowl, GiElectric } from 'react-icons/gi';
 import { AiFillHeart } from 'react-icons/ai';
+import { Profile } from "../loginComponents";
 
 export const links = [
     {

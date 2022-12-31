@@ -13,6 +13,7 @@ import Cuisine from "../components/navigation/pages/Cuisine";
 import RecipePage from "../components/navigation/pages/RecipePage";
 import SearchBarTest from "../components/SearchTest/SearchBarTest";
 import Footer from "./Footer";
+import { Profile } from "../components/login/loginComponents";
 
 const MainContainer = () => {
   // const [recipes, setRecipes] = useState(recipesData);
@@ -46,12 +47,13 @@ const MainContainer = () => {
           />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login/*" element={<Login /> } />
           <Route path="/cuisine" element={<Cuisine />} />
           <Route path="gluten-free" exact element={<GlutenFree />} />
           <Route path="keto" exact element={<Keto />} />
           <Route path="vegetarian" exact element={<Vegetarian />} />
           <Route path="vegan" exact element={<Vegan />} />
+          <Route path="/login/profile" element={<Profile/>}/> 
         </Routes>
       </Router>
       <Footer />

@@ -22,7 +22,26 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 
 const LoginNavbar = () => {
   
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, setScreenSize } = useStateContext();
+
+  // Use effect so that when in mobile view sidebar doesn't show as will take up whole page
+  useEffect(() => {
+      const handleResize = () => setScreenSize (window.innerWidth);
+
+      window.addEventListener('resize', handleResize)
+
+      handleResize();
+
+      return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900){
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
 
   return (
     <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg">
