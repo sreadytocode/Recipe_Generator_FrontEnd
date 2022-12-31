@@ -36,7 +36,6 @@ const MainContainer = () => {
 
   return (
     <div>
-      <Router>
         <Navbar />
         <SearchBarTest />
         <Routes>
@@ -47,15 +46,14 @@ const MainContainer = () => {
           />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login/*" element={<Login /> } />
+          <Route path="/login" element={<Login /> } />
           <Route path="/cuisine" element={<Cuisine />} />
           <Route path="gluten-free" exact element={<GlutenFree />} />
           <Route path="keto" exact element={<Keto />} />
           <Route path="vegetarian" exact element={<Vegetarian />} />
           <Route path="vegan" exact element={<Vegan />} />
-          <Route path="/login/profile" element={<Profile/>}/> 
+          <Route path="/profile" element={<Profile/>}/> 
         </Routes>
-      </Router>
       <Footer />
     </div>
   );

@@ -30,10 +30,10 @@ const Login = () => {
       
       <div>
         <Routes>
-          <Route path="/login/profile" element={<Profile/>}/>
+          {/* <Route path="/login/profile" element={<Profile/>}/> */}
           <Route path="/login/shoppinglist" element={<ShoppingList/>}/>
           <Route path="/login/planner" element={<Calendar/>}/>
-        </Routes>
+        </Routes>  
         </div>
       </div>
     </div>

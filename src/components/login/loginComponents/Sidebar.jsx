@@ -4,6 +4,8 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 import { MdOutlineCancel } from 'react-icons/md';
 import { links } from "../loginData/dummy";
 import  { useStateContext } from "../contexts/ContextProvider";
+import {Profile } from "../loginComponents";
+import { Route, Routes } from 'react-router-dom';
 
 const Sidebar = () => {
   
@@ -42,8 +44,7 @@ const Sidebar = () => {
                 </p>
                 {item.links.map((link) => (
                   <NavLink
-                    to={`/login/${link.name}`}
-                    element={link.element}
+                    to={`/${link.name}`}
                     key={link.name}
                     onClick={handleCloseSideBar}
                     className={({ isActive }) => (isActive ? activeLink : normalLink)}
