@@ -22,7 +22,7 @@ const Login = () => {
           <Sidebar/>
         </div>
       )}
-      <div className={activeMenu ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full' : 'sticky bg-main-bg dark:bg-main-dark-bg w-full min-h-auto flex-10 sm:w-14 '}>
+      <div className={activeMenu ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full xl:w-48 md:w-48' : 'sticky bg-main-bg dark:bg-main-dark-bg w-full min-h-auto flex-200 sm:w-14 '}>
           <div className="absolute md:static bg-main-bg dark:bg-main-dark-bg min-h-auto">
           {/* className="absolute md:static bg-main-bg dark:bg-main-dark-bg navbar w-full " */}
             <LoginNavbar/>
