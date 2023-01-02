@@ -21,11 +21,11 @@ const Sidebar = () => {
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2';
 
   return (
-    <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-11 ">
+    <div className="ml-4 h-auto md:overflow-hidden overflow-auto md:hover:overflow-auto pb-11 ">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center">
-            <Link to="/login" onClick={handleCloseSideBar} className="items-center gap-4 ml-5 mt-5 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+          <div className="ml-16 mt-1 flex text-xl font-extrabold">
+            <Link to="/login" onClick={handleCloseSideBar}>
               <span>Menu</span>
             </Link>
               <TooltipComponent content="Menu" position='BottomCenter'>

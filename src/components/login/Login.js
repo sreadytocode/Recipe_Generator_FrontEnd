@@ -23,7 +23,7 @@ const Login = () => {
         </div>
       )}
       <div className={activeMenu ? 
-      'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full xl:w-48 md:w-48' : 
+      'dark:bg-main-dark-bg bg-main-bg min-h-0 md:ml-100 w-full xl:w-48 md:w-48' : 
       'bg-main-bg dark:bg-main-dark-bg w-full top-px min-h-auto sm:w-14 '}>
           <div className="relative md:static bg-main-bg dark:bg-main-dark-bg min-h-auto">
           {/* className="absolute md:static bg-main-bg dark:bg-main-dark-bg navbar w-full " */}

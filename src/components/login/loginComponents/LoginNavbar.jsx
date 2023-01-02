@@ -9,7 +9,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       type="button"
       onClick={() => customFunc()}
       style={{ color }}
-      className="absolute text-xl rounded-full p-3 hover:bg-light-gray"
+      className="absolute text-xl rounded-full p-2 hover:bg-light-gray"
     >
       <span
         style={{ background: dotColor }}
@@ -44,8 +44,8 @@ const LoginNavbar = () => {
   }, [screenSize]);
 
   return (
-    <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg">
-      <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu)=>
+    <div>
+      <NavButton className="relative" customFunc={() => setActiveMenu((prevActiveMenu)=>
         !prevActiveMenu)} color="green" icon={<AiOutlineMenu/>}/> 
     </div>
     

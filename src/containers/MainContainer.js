@@ -58,7 +58,7 @@ const MainContainer = () => {
           <Route path="/favourite recipes" element={<FavouriteRecipes/>}/>
           <Route path="/pantry" element={<Pantry/>}/>
         </Routes>
-      <Footer />
+      <Footer className="fixed bottom-0"/>
     </div>
   );
 };

@@ -10,9 +10,14 @@
 }
 
 body {
+  box-sizing: inherit;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6.74em;
 }
 
 .home,
