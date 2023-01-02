@@ -28,13 +28,13 @@ const Login = () => {
             <LoginNavbar/>
           </div>
       
-      <div>
+      {/* <div>
         <Routes>
           {/* <Route path="/login/profile" element={<Profile/>}/> */}
-          <Route path="/login/shoppinglist" element={<ShoppingList/>}/>
+          {/* <Route path="/login/shoppinglist" element={<ShoppingList/>}/>
           <Route path="/login/planner" element={<Calendar/>}/>
         </Routes>  
-        </div>
+        </div> */} 
       </div>
     </div>
   );

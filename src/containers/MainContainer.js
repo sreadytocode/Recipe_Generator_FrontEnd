@@ -13,7 +13,8 @@ import Cuisine from "../components/navigation/pages/Cuisine";
 import RecipePage from "../components/navigation/pages/RecipePage";
 import SearchBarTest from "../components/SearchTest/SearchBarTest";
 import Footer from "./Footer";
-import { Profile } from "../components/login/loginComponents";
+import { Profile, FavouriteRecipes } from "../components/login/loginComponents";
+import { ShoppingList, Calendar, Pantry } from "../components/login/loginpages";
 
 const MainContainer = () => {
   // const [recipes, setRecipes] = useState(recipesData);
@@ -53,6 +54,10 @@ const MainContainer = () => {
           <Route path="vegetarian" exact element={<Vegetarian />} />
           <Route path="vegan" exact element={<Vegan />} />
           <Route path="/profile" element={<Profile/>}/> 
+          <Route path="/shopping list" element={<ShoppingList/>}/>
+          <Route path="/meal planner" element={<Calendar/>}/>
+          <Route path="/favourite recipes" element={<FavouriteRecipes/>}/>
+          <Route path="/pantry" element={<Pantry/>}/>
         </Routes>
       <Footer />
     </div>
