@@ -12,7 +12,7 @@ const Sidebar = () => {
   const { activeMenu, setActiveMenu, screenSize } = useStateContext();
 
   const handleCloseSideBar = () => {
-    if (activeMenu && screenSize <= 900){
+    if (activeMenu && screenSize <= 1150){
       setActiveMenu(false);
     }
   }
@@ -37,6 +37,7 @@ const Sidebar = () => {
               </TooltipComponent>
           </div>
           <div className='mt-10'>
+            {/* Maps through dummy data for sidebar so will show link names, icons etc */}
             {links.map((item) => (
               <div key={item.title}>
                 <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">

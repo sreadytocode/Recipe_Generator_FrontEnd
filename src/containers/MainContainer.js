@@ -6,14 +6,13 @@ import Contact from "../components/navigation/pages/Contact";
 import GlutenFree from "../components/navigation/pages/GlutenFree";
 import Home from "../components/navigation/pages/Home";
 import Keto from "../components/navigation/pages/Keto";
-import Login from "../components/login/Login";
 import Vegetarian from "../components/navigation/pages/Vegetarian";
 import Vegan from "../components/navigation/pages/Vegan";
 import Cuisine from "../components/navigation/pages/Cuisine";
 import RecipePage from "../components/navigation/pages/RecipePage";
 import SearchBarTest from "../components/SearchTest/SearchBarTest";
 import Footer from "./Footer";
-import { Profile, FavouriteRecipes } from "../components/login/loginComponents";
+import { Profile, FavouriteRecipes, Welcome } from "../components/login/loginComponents";
 import { ShoppingList, Calendar, Pantry } from "../components/login/loginpages";
 
 const MainContainer = () => {
@@ -47,7 +46,7 @@ const MainContainer = () => {
           />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login /> } />
+          <Route path="/login" element={<Welcome /> } />
           <Route path="/cuisine" element={<Cuisine />} />
           <Route path="gluten-free" exact element={<GlutenFree />} />
           <Route path="keto" exact element={<Keto />} />

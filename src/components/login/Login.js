@@ -18,23 +18,17 @@ const Login = () => {
           <Sidebar/>
       </div>
       ) : (
-        <div className="w-0 dark:bg-secondary-dark-bg"> 
+        <div className="w-0 h-0 dark:bg-secondary-dark-bg"> 
           <Sidebar/>
         </div>
       )}
-      <div className={activeMenu ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full xl:w-48 md:w-48' : 'sticky bg-main-bg dark:bg-main-dark-bg w-full min-h-auto flex-200 sm:w-14 '}>
-          <div className="absolute md:static bg-main-bg dark:bg-main-dark-bg min-h-auto">
+      <div className={activeMenu ? 
+      'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-100 w-full xl:w-48 md:w-48' : 
+      'bg-main-bg dark:bg-main-dark-bg w-full top-px min-h-auto sm:w-14 '}>
+          <div className="relative md:static bg-main-bg dark:bg-main-dark-bg min-h-auto">
           {/* className="absolute md:static bg-main-bg dark:bg-main-dark-bg navbar w-full " */}
             <LoginNavbar/>
           </div>
-      
-      {/* <div>
-        <Routes>
-          {/* <Route path="/login/profile" element={<Profile/>}/> */}
-          {/* <Route path="/login/shoppinglist" element={<ShoppingList/>}/>
-          <Route path="/login/planner" element={<Calendar/>}/>
-        </Routes>  
-        </div> */} 
       </div>
     </div>
   );

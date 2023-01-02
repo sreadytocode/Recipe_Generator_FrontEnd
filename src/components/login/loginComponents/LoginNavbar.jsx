@@ -9,7 +9,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
       type="button"
       onClick={() => customFunc()}
       style={{ color }}
-      className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      className="absolute text-xl rounded-full p-3 hover:bg-light-gray"
     >
       <span
         style={{ background: dotColor }}
@@ -36,7 +36,7 @@ const LoginNavbar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenSize <= 1150){
+    if (screenSize <= 1100){
       setActiveMenu(false);
     } else {
       setActiveMenu(true);

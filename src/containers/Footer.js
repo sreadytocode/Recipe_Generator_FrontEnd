@@ -8,7 +8,7 @@ const BottomFooter = styled.div`
   margin-top: 2rem;
   font-size: 1.5rem;
   text-align: center;
-  position: relative;
+  position: absolute;
   top: 100%;
   width: 100%;
 `;
