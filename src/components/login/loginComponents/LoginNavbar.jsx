@@ -36,7 +36,7 @@ const LoginNavbar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenSize <= 900){
+    if (screenSize <= 1150){
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
