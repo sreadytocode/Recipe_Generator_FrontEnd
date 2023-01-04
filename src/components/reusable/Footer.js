@@ -4,20 +4,18 @@ import styled from "styled-components";
 const BottomFooter = styled.div`
   background-color: #009f4f;
   color: white;
-  /* padding: 2rem; */
-  /* margin-top: 2rem; */
+  padding: 2rem;
+  margin-top: 2rem;
   font-size: 1.5rem;
   text-align: center;
-  /* position: absolute; */
-
+  position: relative;
+  top: 100%;
   width: 100%;
-  bottom: 0;
-  padding: 1rem;
 `;
 
 const Footer = () => {
   return (
-    <BottomFooter className="mt-8">
+    <BottomFooter>
       <p>Copyright &copy; Edamame Inc. 2023</p>
     </BottomFooter>
   );

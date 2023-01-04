@@ -12,7 +12,11 @@ import Cuisine from "../components/navigation/pages/Cuisine";
 import RecipePage from "../components/navigation/pages/RecipePage";
 import SearchBarTest from "../components/SearchTest/SearchBarTest";
 import Footer from "./Footer";
-import { Profile, FavouriteRecipes, Welcome } from "../components/login/loginComponents";
+import {
+  Profile,
+  FavouriteRecipes,
+  Welcome,
+} from "../components/login/loginComponents";
 import { ShoppingList, Calendar, Pantry } from "../components/login/loginpages";
 
 const MainContainer = () => {
@@ -36,12 +40,9 @@ const MainContainer = () => {
 
   return (
     <div>
-      <div>
-        
-      </div>
       <Router>
         <Navbar />
-        <SearchBarTest />
+
         <Routes>
           <Route path="/" exact element={<Home recipes={recipes} />} />
           <Route
@@ -50,20 +51,20 @@ const MainContainer = () => {
           />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Welcome /> } />
+          <Route path="/login" element={<Welcome />} />
           <Route path="/cuisine" element={<Cuisine />} />
           <Route path="gluten-free" exact element={<GlutenFree />} />
           <Route path="keto" exact element={<Keto />} />
           <Route path="vegetarian" exact element={<Vegetarian />} />
           <Route path="vegan" exact element={<Vegan />} />
-          <Route path="/profile" element={<Profile/>}/> 
-          <Route path="/shopping list" element={<ShoppingList/>}/>
-          <Route path="/meal planner" element={<Calendar/>}/>
-          <Route path="/favourite recipes" element={<FavouriteRecipes/>}/>
-          <Route path="/pantry" element={<Pantry/>}/>
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/shopping list" element={<ShoppingList />} />
+          <Route path="/meal planner" element={<Calendar />} />
+          <Route path="/favourite recipes" element={<FavouriteRecipes />} />
+          <Route path="/pantry" element={<Pantry />} />
         </Routes>
       </Router>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
