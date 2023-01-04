@@ -3,7 +3,7 @@ import Title from "../../reusable/Title";
 
 const None = () => {
   return (
-    <div className='flex justify-center mt-20'>
+    <div className='none text-black'>
         <Title text={"None"}/>
     </div>
   )

@@ -3,7 +3,7 @@ import Title from "../../reusable/Title";
 
 const Pakistani = () => {
   return (
-    <div className='flex justify-center mt-20'>
+    <div className='pakistani text-red-800'>
        <Title text={"Pakistani"} />
     </div>
   )

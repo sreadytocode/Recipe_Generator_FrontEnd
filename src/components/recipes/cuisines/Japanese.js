@@ -3,8 +3,8 @@ import Title from "../../reusable/Title";
 
 const Japanese = () => {
   return (
-    <div className='flex justify-center mt-20'>
-       <Title text={"Japanese"} />
+    <div className='japanese text-red-500'>
+       <Title text={"Japanese"}/>
     </div>
   )
 }

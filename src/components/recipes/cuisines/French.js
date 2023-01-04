@@ -3,7 +3,7 @@ import Title from "../../reusable/Title";
 
 const French = () => {
   return (
-    <div className='flex justify-center mt-20'>
+    <div className='french text-green-700'>
        <Title text={"French"} />
     </div>
   )
