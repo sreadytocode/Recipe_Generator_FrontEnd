@@ -1,9 +1,8 @@
 import React, {useEffect} from "react";
 import { Link, NavLink } from "react-router-dom";
-import Title from "../../reusable/Title";
-import { useStateContext } from "../../login/contexts/ContextProvider";
+import Title from "../../../reusable/Title";
+import { useStateContext } from "../../../login/contexts/ContextProvider";
 import "./Cuisine.css";
-import { preventBatch } from "@syncfusion/ej2-react-grids";
 
 const Cuisine = () => {
   const {cuisines, setCuisines, click, setClick } = useStateContext();

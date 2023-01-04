@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { Link, NavLink } from "react-router-dom";
-import { useStateContext } from '../../login/contexts/ContextProvider';
+import { useStateContext } from '../../../login/contexts/ContextProvider';
 import "./Diet.css";
 
 const Diet = () => {

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Button } from "../reusable/Button";
+import { Button } from "../../../reusable/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Cuisine from "./pages/Cuisine";
-import Diet from "./pages/Diet";
-import Logo from "../../images/logo.svg";
+import Cuisine from "./Cuisine";
+import Diet from "./Diet";
+import Logo from "../../../../images/logo.svg";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
