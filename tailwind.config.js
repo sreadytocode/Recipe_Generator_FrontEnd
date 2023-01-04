@@ -39,8 +39,8 @@ module.exports = {
           590: '590px',
         },
         backgroundImage: {
-          'hero-pattern':
-            "url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png')",
+          'fruit':
+            "url('/Users/hamidqureshi/codeclan_work/Final-project/Front-end/Recipe_Generator_FrontEnd/public/images/fruitbasket.webp')",
         },
       },
     },

@@ -12,7 +12,7 @@ const Profile = () => {
         <Login/>
       </div>
       <div className="col-start-2 col-end-6 mr-60">
-        <div className="flex justify-center mr-12 mb-10 font-extrabold text-4xl text-gray-500">
+        <div className="flex justify-center mt-20 mr-12 mb-10 font-extrabold text-4xl text-gray-500">
           <h1>User Profile</h1>
         </div>
         <div className="rounded-full mb-10 flex justify-center">
