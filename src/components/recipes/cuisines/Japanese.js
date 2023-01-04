@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Title from "../../reusable/Title";
 
 const Japanese = () => {
   return (
-    <div>Japanese</div>
+    <div className='flex justify-center mt-20'>
+       <Title text={"Japanese"} />
+    </div>
   )
 }
 
