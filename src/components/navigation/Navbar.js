@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import { Button } from "../reusable/Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Dropdown from "./Dropdown";
+import Cuisine from "./pages/Cuisine";
+import Diet from "./pages/Diet";
 import Logo from "../../images/logo.svg";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
 
   //Sets the dropdown menu of on line 46. If dropdown === true then render the DropDown component. Initial value set to false.
-  const [dropdown, setDropdown] = useState(false);
+  const [cuisineDropdown, setCuisinedropdown] = useState(false);
+  const [dietDropdown, setDietdropdown] = useState(false);
 
   //Sets the state of the hamburger and cross icons and toggles back and forth
   const handleClick = () => setClick(!click);
@@ -17,19 +19,35 @@ const Navbar = () => {
   const closeMobileMenu = () => setClick(false);
 
   //When the viewport is less than 960 then the dropdown will not be vissible
-  const onMouseEnter = () => {
+  const onMouseEnterCuisine = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setCuisinedropdown (false);
     } else {
-      setDropdown(true);
+      setCuisinedropdown (true);
     }
   };
 
-  const onMouseLeave = () => {
+  const onMouseEnterDiet = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setDietdropdown (false);
     } else {
-      setDropdown(false);
+      setDietdropdown (true);
+    }
+  };
+
+  const onMouseLeaveCuisine = () => {
+    if (window.innerWidth < 960) {
+      setCuisinedropdown (false);
+    } else {
+      setCuisinedropdown (false);
+    }
+  };
+
+  const onMouseLeaveDiet = () => {
+    if (window.innerWidth < 960) {
+      setDietdropdown (false);
+    } else {
+      setDietdropdown (false);
     }
   };
 
@@ -62,13 +80,22 @@ const Navbar = () => {
           {/* Dropdown menu start here */}
           <li
             className="nav-item"
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onMouseEnter={onMouseEnterCuisine}
+            onMouseLeave={onMouseLeaveCuisine}
           >
-            <Link to="/cuisine" className="nav-links" onClick={closeMobileMenu}>
+            <Link className="nav-links" onClick={closeMobileMenu}>
               Cuisine <i className="fas fa-caret-down" />
             </Link>
-            {dropdown && <Dropdown />}
+            {cuisineDropdown && <Cuisine />}
+          </li>
+
+          <li className="nav-item"
+            onMouseEnter={onMouseEnterDiet}
+            onMouseLeave={onMouseLeaveDiet}>
+              <Link className="nav-links" onClick={closeMobileMenu}>
+              Dietary <i className="fas fa-caret-down" />
+            </Link>
+            {dietDropdown && <Diet />}
           </li>
 
           <li className="nav-item">
