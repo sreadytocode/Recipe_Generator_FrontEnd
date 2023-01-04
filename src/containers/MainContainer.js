@@ -36,6 +36,10 @@ const MainContainer = () => {
 
   return (
     <div>
+      <div>
+        
+      </div>
+      <Router>
         <Navbar />
         <SearchBarTest />
         <Routes>
@@ -58,7 +62,8 @@ const MainContainer = () => {
           <Route path="/favourite recipes" element={<FavouriteRecipes/>}/>
           <Route path="/pantry" element={<Pantry/>}/>
         </Routes>
-      <Footer className="fixed bottom-0"/>
+      </Router>
+      <Footer/>
     </div>
   );
 };

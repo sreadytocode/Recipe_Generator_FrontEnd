@@ -12,9 +12,9 @@ const Login = () => {
   const { activeMenu } = useStateContext();
 
   return (
-    <div>
+    <div >
       {activeMenu ? (
-        <div className="w-500 absolute sidebar dark:bg-secondary-dark-bg bg-white">
+        <div className="w-500 min-h-[90%] absolute sidebar dark:bg-secondary-dark-bg bg-white">
           <Sidebar/>
       </div>
       ) : (
