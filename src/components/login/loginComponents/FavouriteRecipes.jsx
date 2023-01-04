@@ -2,6 +2,7 @@ import React from "react";
 import Login from "../Login";
 import "../Login.css";
 import { useStateContext } from "../contexts/ContextProvider";
+import recipesData from "../../../dummyData/RecipesData";
 
 const FavouriteRecipes = () => {
   const { favouriteRecipes, setFavouriteRecipes } = useStateContext();
@@ -13,13 +14,8 @@ const FavouriteRecipes = () => {
       </div>
       <div className="col-start-2 col-end-6">
         <h1>Favourite Recipes</h1>
-        {favouriteRecipes}
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-          explicabo, saepe ullam assumenda, doloremque rerum accusamus sapiente
-          eaque quas autem natus adipisci deleniti odit eos suscipit error,
-          ipsam officia fugit?
-        </p>
+        {console.log(favouriteRecipes)}
+        <p>{favouriteRecipes}</p>
       </div>
     </div>
   );

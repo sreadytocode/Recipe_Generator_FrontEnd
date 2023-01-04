@@ -23,7 +23,7 @@ const RecipeInstructions = ({ instructions }) => {
   ));
 
   return (
-    <InstructionsContainer>
+    <InstructionsContainer className="mb-12">
       <InstructionsTitle>Instructions</InstructionsTitle>
       <ol>{instructionList}</ol>
     </InstructionsContainer>

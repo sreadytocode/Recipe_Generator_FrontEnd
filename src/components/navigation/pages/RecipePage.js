@@ -5,6 +5,7 @@ import RecipeRating from "../../reusable/RecipeRating";
 import RecipeInstructions from "../../recipes/RecipeInstructions";
 import RecipeQuantities from "../../recipes/RecipeQuantities";
 import { AiFillHeart } from "react-icons/ai";
+import { useStateContext } from "../../login/contexts/ContextProvider";
 // import RecipeIngredients from "../../recipes/RecipeIngredients";
 
 //Container for all recipe information
@@ -60,6 +61,12 @@ const RecipePage = ({ recipes }) => {
   //The param number is compared to the recipe.id using find method.
   const recipe = recipes.find((recipe) => recipe.id === id);
 
+  const { setFavouriteRecipes } = useStateContext();
+
+  const clickHandler = (name) => {
+    setFavouriteRecipes(name);
+  };
+
   return (
     <RecipeSection>
       <RecipeInfoPanel>
@@ -84,7 +91,10 @@ const RecipePage = ({ recipes }) => {
       <ImageInstructionsContainer>
         <div className="w-2/3 mr-4">
           <RecipeImage src={recipe.image} alt="recipe" />
-          <button className="flex items-center mt-2 hover:bg-sky-700">
+          <button
+            className="flex items-center mt-2 hover:bg-sky-700"
+            onClick={() => clickHandler(recipe.name)}
+          >
             <AiFillHeart className="mr-2" />
             Add to Favourites
           </button>

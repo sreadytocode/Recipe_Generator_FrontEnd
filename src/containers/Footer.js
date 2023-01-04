@@ -17,7 +17,7 @@ const BottomFooter = styled.div`
 
 const Footer = () => {
   return (
-    <BottomFooter className="mt-8">
+    <BottomFooter>
       <p>Copyright &copy; Edamame Inc. 2023</p>
     </BottomFooter>
   );
