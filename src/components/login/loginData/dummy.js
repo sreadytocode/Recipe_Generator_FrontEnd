@@ -10,7 +10,8 @@ export const user =
   {
     firstName: 'Clawdia',
     lastName: 'Meowise',
-    icon: UserIcon
+    icon: UserIcon,
+    dietaryreq: 'None'
   }
 
 
