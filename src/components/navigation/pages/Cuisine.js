@@ -18,13 +18,13 @@ const Cuisine = () => {
   return (
     <div>
       <ul onClick={handleClick}
-        className={click ? "dropdown-menu clicked" : "dropdown-menu"}>
+        className={click ? "cuisinedropdown-menu clicked" : "cuisinedropdown-menu"}>
         {cuisines.map((item, index) => {
             return (
               <li key={index}>
                 <NavLink
                   to={`/${item.cuisineType}`}
-                  className="dropdown-link"
+                  className="cuisinedropdown-link"
                   onClick={() => {
                     setClick(false);
                   }}

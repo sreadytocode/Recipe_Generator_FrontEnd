@@ -1,14 +1,15 @@
-.dropdown-menu {
+.cuisinedropdown-menu {
     background: red;
     width: 150px;
     position: absolute;
-    top: 80px;
-    left: 700px;
+    top: 65px;
+    margin-left: -130px;
+    right: 50;
     list-style: none;
-    text-align: start;
+    /* text-align: start; */
   }
   
-  .dropdown-menu li {
+  .cuisinedropdown-menu li {
     background: #009f4f;
     cursor: pointer; 
   }
@@ -17,11 +18,11 @@
     background: #59bd8b;
   }
   
-  .dropdown-menu.clicked {
+  .cuisinedropdown-menu.clicked {
     display: none;
   }
   
-  .dropdown-link {
+  .cuisinedropdown-link {
     display: block;
     height: 100%;
     width: 100%;
