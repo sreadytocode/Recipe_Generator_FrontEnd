@@ -27,19 +27,19 @@ const Navbar = () => {
     }
   };
 
-  const onMouseEnterDiet = () => {
-    if (window.innerWidth < 960) {
-      setDietdropdown (false);
-    } else {
-      setDietdropdown (true);
-    }
-  };
-
   const onMouseLeaveCuisine = () => {
     if (window.innerWidth < 960) {
       setCuisinedropdown (false);
     } else {
       setCuisinedropdown (false);
+    }
+  };
+
+  const onMouseEnterDiet = () => {
+    if (window.innerWidth < 960) {
+      setDietdropdown (false);
+    } else {
+      setDietdropdown (true);
     }
   };
 

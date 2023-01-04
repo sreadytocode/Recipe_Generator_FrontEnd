@@ -12,7 +12,11 @@ const Diet = () => {
       .then((dietData) => setDiet(dietData));
   }, [setDiet]);
 
-  const handleClick = () => setClick(!click);
+  // When clicked on dropdown and clicked on a link wouldn't open up dropdown again hence evt.prevent.default();
+  const handleClick = (evt) => {
+    evt.prevent.default();
+    setClick(!click)
+  };
 
   // Created array 
   const duplicateCheck = [];

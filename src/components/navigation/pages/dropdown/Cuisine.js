@@ -13,7 +13,10 @@ const Cuisine = () => {
       .then((cuisineData) => setCuisines(cuisineData));
   }, [setCuisines]);
 
-  const handleClick = () => setClick(!click); 
+  const handleClick = (evt) => {
+    evt.prevent.default();
+    setClick(!click)
+  }; 
 
 // Created array 
   const duplicateCheck = [];
