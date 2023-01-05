@@ -18,7 +18,7 @@
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(6, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
@@ -90,10 +90,10 @@
     display: table;
   }
 
-  .nav-links:hover {
+  /* .nav-links:hover {
     background-color: #59bd8b;
     border-radius: 0;
-  }
+  } */
 
   .navbar-logo {
     position: absolute;

@@ -38,10 +38,6 @@ module.exports = {
         minHeight: {
           590: '590px',
         },
-        backgroundImage: {
-          'fruit':
-            "url('/Users/hamidqureshi/codeclan_work/Final-project/Front-end/Recipe_Generator_FrontEnd/public/images/fruitbasket.webp')",
-        },
       },
     },
     plugins: [],

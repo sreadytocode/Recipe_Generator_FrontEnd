@@ -1,6 +1,6 @@
-.dropdown-menu {
+/* .dropdown-menu {
   background: red;
-  width: 200px;
+  width: 300px;
   position: absolute;
   top: 80px;
   list-style: none;
@@ -9,7 +9,7 @@
 
 .dropdown-menu li {
   background: #009f4f;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .dropdown-menu li:hover {
@@ -33,4 +33,4 @@
   .fa-caret-down {
     display: none;
   }
-}
+} */
