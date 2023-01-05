@@ -137,3 +137,12 @@
   height: 30vh;
   width: 100%;
 }
+
+.italian{
+  background-image: url("images/italian3.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
