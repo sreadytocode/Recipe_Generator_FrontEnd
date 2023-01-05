@@ -3,6 +3,7 @@ import Title from "../../reusable/Title";
 import { useStateContext } from '../../login/contexts/ContextProvider';
 import styled from "styled-components";
 import RecipeRating from '../../reusable/RecipeRating';
+import { Link } from 'react-router-dom';
 
 const RecipeCard = styled.div`
   width: 20rem;
@@ -60,21 +61,23 @@ const French = () => {
   const frenchCuisine = cuisines.map((recipe, index) => {
     if (recipe.cuisineType === "FRENCH") {
       return (
-      <RecipeCard>
-        <RecipeTitleContainer>
-          <RecipeTitle>{recipe.name}</RecipeTitle>
-        </RecipeTitleContainer>
+      <Link  key={recipe.id} to={`/recipe/${recipe.id}`}>
+        <RecipeCard key={index}>
+          <RecipeTitleContainer>
+            <RecipeTitle>{recipe.name}</RecipeTitle>
+          </RecipeTitleContainer>
 
-      <RecipeImage src={recipe.image} alt="recipe" />
-      <RecipeInfoContainer>
-        <RatingContainer>
-          <p>Rating:</p>
-          <RecipeRating recipeRating={recipe.rating} />
-        </RatingContainer>
+        <RecipeImage src={recipe.image} alt="recipe" />
+        <RecipeInfoContainer>
+          <RatingContainer>
+            <p>Rating:</p>
+            <RecipeRating recipeRating={recipe.rating} />
+          </RatingContainer>
 
-        <p>Servings: {recipe.serving}</p>
-      </RecipeInfoContainer>
-    </RecipeCard>
+          <p>Servings: {recipe.serving}</p>
+        </RecipeInfoContainer>
+      </RecipeCard>
+    </Link>
       )
   } else {
     return null;
@@ -86,8 +89,8 @@ const French = () => {
       <div className='french text-green-700'>
         <Title text={"French"} />
       </div>
-      <div>
-        <h2>{frenchCuisine}</h2>
+      <div className='inline flex gap-5 justify-center justify-evenly mt-20 align'>
+        {frenchCuisine}
       </div>
     </div>
   )
