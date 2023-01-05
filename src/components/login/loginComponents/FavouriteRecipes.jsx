@@ -15,7 +15,14 @@ const FavouriteRecipes = () => {
       <div className="col-start-2 col-end-6">
         <h1>Favourite Recipes</h1>
         {console.log(favouriteRecipes)}
-        <p>{favouriteRecipes}</p>
+        {favouriteRecipes.map((recipe) => {
+          return (
+            <>
+              <h1>{recipe.name}</h1>
+              <img src={recipe.image} alt={recipe.name} width="200" />
+            </>
+          );
+        })}
       </div>
     </div>
   );

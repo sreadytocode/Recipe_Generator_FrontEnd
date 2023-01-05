@@ -61,10 +61,13 @@ const RecipePage = ({ recipes }) => {
   //The param number is compared to the recipe.id using find method.
   const recipe = recipes.find((recipe) => recipe.id === id);
 
-  const { setFavouriteRecipes } = useStateContext();
+  const { favouriteRecipes, setFavouriteRecipes } = useStateContext();
 
-  const clickHandler = (name) => {
-    setFavouriteRecipes(name);
+  const clickHandler = (recipe) => {
+    const newFavouriteRecipes = [...favouriteRecipes];
+    newFavouriteRecipes.push(recipe);
+    console.log(newFavouriteRecipes);
+    setFavouriteRecipes(newFavouriteRecipes);
   };
 
   return (
@@ -93,7 +96,7 @@ const RecipePage = ({ recipes }) => {
           <RecipeImage src={recipe.image} alt="recipe" />
           <button
             className="flex items-center mt-2 hover:bg-sky-700"
-            onClick={() => clickHandler(recipe.name)}
+            onClick={() => clickHandler(recipe)}
           >
             <AiFillHeart className="mr-2" />
             Add to Favourites
