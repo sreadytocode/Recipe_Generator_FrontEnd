@@ -43,6 +43,7 @@ const RatingContainer = styled.div`
 `;
 
 const Recipe = ({ recipe }) => {
+
   return (
     <RecipeCard>
       <RecipeTitleContainer>

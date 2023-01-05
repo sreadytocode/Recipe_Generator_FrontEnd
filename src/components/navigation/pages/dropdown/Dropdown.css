@@ -1,6 +1,10 @@
-.dropdown-menu {
+/* .dropdown-menu {
   background: red;
+<<<<<<< HEAD:src/components/navigation/Dropdown.css
   width: 150px;
+=======
+  width: 300px;
+>>>>>>> main:src/components/navigation/pages/dropdown/Dropdown.css
   position: absolute;
   top: 80px;
   list-style: none;
@@ -9,7 +13,7 @@
 
 .dropdown-menu li {
   background: #009f4f;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .dropdown-menu li:hover {
@@ -33,4 +37,4 @@
   .fa-caret-down {
     display: none;
   }
-}
+} */

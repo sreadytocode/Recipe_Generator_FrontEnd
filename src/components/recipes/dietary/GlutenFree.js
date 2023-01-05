@@ -5,7 +5,7 @@ import Title from "../../reusable/Title";
 const GlutenFree = () => {
   return (
     <div className="gluten-free">
-      <Title text = {"GlutenFree"} />
+      <Title text = {"Gluten-Free"} />
     </div>
   );
 };

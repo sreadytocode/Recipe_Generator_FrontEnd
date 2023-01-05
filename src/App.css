@@ -20,6 +20,11 @@
 } */
 
 .home,
+.none,
+.japanese,
+.french,
+.american,
+.pakistani,
 .about,
 .contact,
 .gluten-free,
@@ -71,6 +76,60 @@
 
 .gluten-free {
   background-image: url("images/indian.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.japanese{
+  background-image: url("images/japanese.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.french{
+  background-image: url("images/macaroons.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.pakistani{
+  background-image: url("images/pakistani1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.american{
+  background-image: url("images/american.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.none{
+  background-image: url("images/none.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  width: 100%;
+}
+
+.welcome{
+  background-image: url("images/fruitbasket.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

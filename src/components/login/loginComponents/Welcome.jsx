@@ -4,7 +4,7 @@ import "../Login.css";
 
 const Welcome = () => {
   return (
-    <div className="grid grid-cols-5 gap-1 bg-fruit bg-cover bg-no-repeat bg-center" >
+    <div className="grid grid-cols-5 gap-1 welcome" >
       <div className="col-start-1 col-end-2">
         <Login/>
       </div>
