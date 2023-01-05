@@ -2,10 +2,9 @@ import React from "react";
 import Login from "../Login";
 import "../Login.css";
 import { useStateContext } from "../contexts/ContextProvider";
-import recipesData from "../../../dummyData/RecipesData";
 
 const FavouriteRecipes = () => {
-  const { favouriteRecipes, setFavouriteRecipes } = useStateContext();
+  const { favouriteRecipes } = useStateContext();
 
   return (
     <div className="grid grid-cols-5 gap-1">

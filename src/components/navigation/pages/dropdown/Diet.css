@@ -1,40 +1,39 @@
 .diet-dropdown-menu {
-    background: red;
-    width: 150px;
-    position: absolute;
-    top: 80px;
-    margin-left: -130px;
-    /* left: 980px; */
-    list-style: none;
-    text-align: start;
-  }
-  
-  .diet-dropdown-menu li {
-    background: #009f4f;
-    cursor: pointer; 
-  }
-  
-  .dropdown-menu li:hover {
-    background: #59bd8b;
-  }
-  
-  .diet-dropdown-menu.clicked {
+  background: red;
+  width: 150px;
+  position: absolute;
+  top: 80px;
+  margin-left: -130px;
+  /* left: 980px; */
+  list-style: none;
+  text-align: start;
+}
+
+.diet-dropdown-menu li {
+  background: #009f4f;
+  cursor: pointer;
+}
+
+.diet-dropdown-menu li:hover {
+  background: #59bd8b;
+}
+
+.diet-dropdown-menu.clicked {
+  display: none;
+}
+
+.diet-dropdown-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+  .fa-caret-down {
     display: none;
   }
-  
-  .diet-dropdown-link {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    color: #fff;
-    padding: 16px;
-    text-align: center;
-  }
-  
-  @media screen and (max-width: 960px) {
-    .fa-caret-down {
-      display: none;
-    }
-  }
-  
+}

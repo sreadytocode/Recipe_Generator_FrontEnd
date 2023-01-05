@@ -1,39 +1,39 @@
 .cuisinedropdown-menu {
-    background: red;
-    width: 150px;
-    position: absolute;
-    top: 80px;
-    margin-left: -130px;
-    right: 50;
-    list-style: none;
-    /* text-align: start; */
-  }
-  
-  .cuisinedropdown-menu li {
-    background: #009f4f;
-    cursor: pointer; 
-  }
-  
-  .dropdown-menu li:hover {
-    background: #59bd8b;
-  }
-  
-  .cuisinedropdown-menu.clicked {
+  background: red;
+  width: 150px;
+  position: absolute;
+  top: 80px;
+  margin-left: -130px;
+  right: 50;
+  list-style: none;
+  /* text-align: start; */
+}
+
+.cuisinedropdown-menu li {
+  background: #009f4f;
+  cursor: pointer;
+}
+
+.cuisinedropdown-menu li:hover {
+  background: #59bd8b;
+}
+
+.cuisinedropdown-menu.clicked {
+  display: none;
+}
+
+.cuisinedropdown-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+  padding: 16px;
+}
+
+@media screen and (max-width: 960px) {
+  .fa-caret-down {
+
     display: none;
   }
-  
-  .cuisinedropdown-link {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    color: #fff;
-    padding: 16px;
-  }
-  
-  @media screen and (max-width: 960px) {
-    .fa-caret-down {
-      display: none;
-    }
-  }
-  
+}
