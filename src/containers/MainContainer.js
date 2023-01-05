@@ -10,7 +10,6 @@ import Keto from "../components/recipes/dietary/Keto";
 import Vegetarian from "../components/recipes/dietary/Vegetarian";
 import Vegan from "../components/recipes/dietary/Vegan";
 import RecipePage from "../components/navigation/pages/RecipePage";
-
 import Footer from "./Footer";
 import French from "../components/recipes/cuisines/French";
 import Pakistani from "../components/recipes/cuisines/Pakistani";
@@ -58,6 +57,7 @@ const MainContainer = () => {
             <Route path="keto" exact element={<Keto />} />
             <Route path="vegetarian" exact element={<Vegetarian />} />
             <Route path="vegan" exact element={<Vegan />} />
+            <Route path="/None" element={<None/>}/>
             <Route path="/profile" element={<Profile />} />
             <Route path="/shopping list" element={<ShoppingList />} />
             <Route path="/meal planner" element={<Calendar />} />
