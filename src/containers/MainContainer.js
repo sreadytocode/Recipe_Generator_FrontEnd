@@ -15,6 +15,7 @@ import French from "../components/recipes/cuisines/French";
 import Pakistani from "../components/recipes/cuisines/Pakistani";
 import Japanese from "../components/recipes/cuisines/Japanese";
 import American from "../components/recipes/cuisines/American";
+import Italian from "../components/recipes/cuisines/Italian";
 import { Profile, FavouriteRecipes, Welcome } from "../components/login/loginComponents";
 import { ShoppingList, Calendar, Pantry } from "../components/login/loginpages";
 
@@ -67,6 +68,7 @@ const MainContainer = () => {
             <Route path="/Pakistani" element={<Pakistani/>}/>
             <Route path="/Japanese" element={<Japanese/>}/>
             <Route path="/American" element={<American/>}/>
+            <Route path="/Italian" element={<Italian/>}/>
           </Routes>
         </main>
       </Router>
