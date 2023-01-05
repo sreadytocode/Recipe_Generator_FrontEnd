@@ -43,7 +43,6 @@ const RatingContainer = styled.div`
 `;
 
 const Recipe = ({ recipe }) => {
-  // console.log(recipe.quantities);
 
   return (
     <RecipeCard>

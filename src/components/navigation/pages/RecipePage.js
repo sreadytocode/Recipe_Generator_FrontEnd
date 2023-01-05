@@ -4,6 +4,8 @@ import styled from "styled-components";
 import RecipeRating from "../../reusable/RecipeRating";
 import RecipeInstructions from "../../recipes/RecipeInstructions";
 import RecipeQuantities from "../../recipes/RecipeQuantities";
+import { AiFillHeart } from "react-icons/ai";
+import { useStateContext } from "../../login/contexts/ContextProvider";
 // import RecipeIngredients from "../../recipes/RecipeIngredients";
 
 //Container for all recipe information
@@ -17,7 +19,7 @@ const RecipeInfoPanel = styled.div`
 `;
 
 const RecipeImage = styled.img`
-  width: 60%;
+  width: 100%;
   margin-right: 2rem;
   align-self: flex-start;
   border-bottom: 6px solid #009f4f;
@@ -59,6 +61,15 @@ const RecipePage = ({ recipes }) => {
   //The param number is compared to the recipe.id using find method.
   const recipe = recipes.find((recipe) => recipe.id === id);
 
+  const { favouriteRecipes, setFavouriteRecipes } = useStateContext();
+
+  const clickHandler = (recipe) => {
+    const newFavouriteRecipes = [...favouriteRecipes];
+    newFavouriteRecipes.push(recipe);
+    console.log(newFavouriteRecipes);
+    setFavouriteRecipes(newFavouriteRecipes);
+  };
+
   return (
     <RecipeSection>
       <RecipeInfoPanel>
@@ -81,7 +92,17 @@ const RecipePage = ({ recipes }) => {
       </RecipeInfoPanel>
 
       <ImageInstructionsContainer>
-        <RecipeImage src={recipe.image} alt="recipe" />
+        <div className="w-2/3 mr-4">
+          <RecipeImage src={recipe.image} alt="recipe" />
+          <button
+            className="flex items-center mt-2 hover:bg-sky-700"
+            onClick={() => clickHandler(recipe)}
+          >
+            <AiFillHeart className="mr-2" />
+            Add to Favourites
+          </button>
+        </div>
+
         <RecipeQuantities quantities={recipe.quantities}></RecipeQuantities>
       </ImageInstructionsContainer>
 

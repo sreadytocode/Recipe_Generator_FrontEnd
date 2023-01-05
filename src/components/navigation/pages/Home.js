@@ -2,6 +2,7 @@ import React from "react";
 import RecipesList from "../../recipes/RecipesList";
 import styled from "styled-components";
 import Title from "../../reusable/Title";
+import SearchBarTest from "../../SearchTest/SearchBarTest";
 
 const RecipesContainer = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const RecipesContainer = styled.div`
 const Home = ({ recipes }) => {
   return (
     <>
+      <SearchBarTest />
       <div className="home">
         <Title text={"Our Top Rated Recipes"} />
       </div>

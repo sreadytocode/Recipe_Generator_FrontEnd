@@ -1,10 +1,10 @@
-import React, {createContext, useContext, useState} from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
 
 const initialState = {
-    userProfile: false
-}
+  userProfile: false,
+};
 
 export const ContextProvider = ({children}) => {
     const [activeMenu, setActiveMenu] = useState(true);
@@ -12,6 +12,7 @@ export const ContextProvider = ({children}) => {
     const [cuisines, setCuisines] = useState([]);
     const [diet, setDiet] = useState([]);
     const [click, setClick] = useState(false);
+    const [favouriteRecipes, setFavouriteRecipes] = useState([]);
     
     return (
         <StateContext.Provider
@@ -21,11 +22,29 @@ export const ContextProvider = ({children}) => {
             screenSize, setScreenSize,
             cuisines, setCuisines,
             diet, setDiet,
-            click, setClick
+            click, setClick,
+            favouriteRecipes,
+            setFavouriteRecipes,
          }}>
             {children}
         </StateContext.Provider>
     )
 } 
 
-export const useStateContext = () => useContext (StateContext);
+  return (
+    <StateContext.Provider
+      value={{
+        activeMenu,
+        setActiveMenu,
+        screenSize,
+        setScreenSize,
+        favouriteRecipes,
+        setFavouriteRecipes,
+      }}
+    >
+      {children}
+    </StateContext.Provider>
+  );
+};
+
+export const useStateContext = () => useContext(StateContext);

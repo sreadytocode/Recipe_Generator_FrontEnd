@@ -10,7 +10,7 @@ import Keto from "../components/recipes/dietary/Keto";
 import Vegetarian from "../components/recipes/dietary/Vegetarian";
 import Vegan from "../components/recipes/dietary/Vegan";
 import RecipePage from "../components/navigation/pages/RecipePage";
-import SearchBarTest from "../components/SearchTest/SearchBarTest";
+
 import Footer from "./Footer";
 import French from "../components/recipes/cuisines/French";
 import Pakistani from "../components/recipes/cuisines/Pakistani";
@@ -39,40 +39,39 @@ const MainContainer = () => {
   }, []);
 
   return (
-    <div>
-      <div>
-        
-      </div>
+    <>
       <Router>
         <Navbar />
-        <SearchBarTest />
-        <Routes>
-          <Route path="/" exact element={<Home recipes={recipes} />} />
-          <Route
-            path="/recipe/:id"
-            element={<RecipePage recipes={recipes} ingredients={ingredients} />}
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Welcome /> } />
-          <Route path="gluten-free" exact element={<GlutenFree />} />
-          <Route path="keto" exact element={<Keto />} />
-          <Route path="vegetarian" exact element={<Vegetarian />} />
-          <Route path="vegan" exact element={<Vegan />} />
-          <Route path="/None" element={<None/>}/>
-          <Route path="/profile" element={<Profile/>}/> 
-          <Route path="/shopping list" element={<ShoppingList/>}/>
-          <Route path="/meal planner" element={<Calendar/>}/>
-          <Route path="/favourite recipes" element={<FavouriteRecipes/>}/>
-          <Route path="/pantry" element={<Pantry/>}/>
-          <Route path="/French" element={<French/>}/>
-          <Route path="/Pakistani" element={<Pakistani/>}/>
-          <Route path="/Japanese" element={<Japanese/>}/>
-          <Route path="/American" element={<American/>}/>
-        </Routes>
+        <main className="border-solid border-red min-h-screen">
+          <Routes>
+            <Route path="/" exact element={<Home recipes={recipes} />} />
+            <Route
+              path="/recipe/:id"
+              element={
+                <RecipePage recipes={recipes} ingredients={ingredients} />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Welcome />} />
+            <Route path="gluten-free" exact element={<GlutenFree />} />
+            <Route path="keto" exact element={<Keto />} />
+            <Route path="vegetarian" exact element={<Vegetarian />} />
+            <Route path="vegan" exact element={<Vegan />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/shopping list" element={<ShoppingList />} />
+            <Route path="/meal planner" element={<Calendar />} />
+            <Route path="/favourite recipes" element={<FavouriteRecipes />} />
+            <Route path="/pantry" element={<Pantry />} />
+            <Route path="/French" element={<French/>}/>
+            <Route path="/Pakistani" element={<Pakistani/>}/>
+            <Route path="/Japanese" element={<Japanese/>}/>
+            <Route path="/American" element={<American/>}/>
+          </Routes>
+        </main>
       </Router>
-      <Footer/>
-    </div>
+      <Footer />
+    </>
   );
 };
 
