@@ -31,20 +31,4 @@ export const ContextProvider = ({children}) => {
     )
 } 
 
-  return (
-    <StateContext.Provider
-      value={{
-        activeMenu,
-        setActiveMenu,
-        screenSize,
-        setScreenSize,
-        favouriteRecipes,
-        setFavouriteRecipes,
-      }}
-    >
-      {children}
-    </StateContext.Provider>
-  );
-};
-
 export const useStateContext = () => useContext(StateContext);
