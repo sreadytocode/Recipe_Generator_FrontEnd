@@ -1,14 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Login from "../../Login";
 import "../../Login.css";
 import { useStateContext } from '../../contexts/ContextProvider';
 import CalendarHeader from './CalendarHeader';
 import Month from './Month';
 import { getMonth } from "../../utils/util";
+import EventModal from './EventModal';
 
 const Calendar = () => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex, showEventModal } = useStateContext();
+
+  useEffect(() => {
+    setCurrentMonth(getMonth(monthIndex));
+  }, [monthIndex]);
 
   return (
     <div className="grid grid-cols-7 gap-1">
@@ -17,16 +22,16 @@ const Calendar = () => {
       </div>
 
       <div className="col-start-2 col-end-7">
-        {/* <div>
-          <h1>Calendar</h1>
-        </div> */}
-        <div>
-          <CalendarHeader/>
-        </div>
-        <div>
-          <Month month={currentMonth}/> 
-        </div>
-      </div> 
+      {showEventModal && <EventModal />}
+        <div >
+          <div>
+            <CalendarHeader/>
+          </div>
+          <div>
+            <Month month={currentMonth}/> 
+          </div>
+        </div> 
+      </div>
     </div>
   )
 }
