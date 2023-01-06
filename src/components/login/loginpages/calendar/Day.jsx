@@ -38,7 +38,7 @@ const Day = (props) => {
         </p>
       </header>
       <div
-        className="cursor-pointer flex justify-center"
+        className="flex-1 cursor-pointer flex justify-center"
         onClick={() => {
           setDaySelected(day);
           setShowEventModal(true);
