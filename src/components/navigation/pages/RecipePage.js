@@ -66,7 +66,6 @@ const RecipePage = ({ recipes }) => {
   const clickHandler = (recipe) => {
     const newFavouriteRecipes = [...favouriteRecipes];
     newFavouriteRecipes.push(recipe);
-    console.log(newFavouriteRecipes);
     setFavouriteRecipes(newFavouriteRecipes);
   };
 
