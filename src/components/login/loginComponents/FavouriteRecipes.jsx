@@ -35,7 +35,12 @@ const FavouriteRecipes = () => {
             <div key={index}>
               <h1>{recipe.name}</h1>
               <img src={recipe.image} alt={recipe.name} width="200" />
-              <button onClick={() => clickHandler(recipe)}>+</button>
+              <button
+                className="bg-green-light hover:bg-green-dark text-white font-bold py-2 px-4 rounded"
+                onClick={() => clickHandler(recipe)}
+              >
+                Add to Shopping List +
+              </button>
             </div>
           );
         })}
