@@ -9,7 +9,7 @@ const Day = (props) => {
 
   const getCurrentDayClass = () => {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
-      ? "bg-blue-600 text-white rounded-full w-7"
+      ? "bg-green-600 text-white rounded-full w-7"
       : "";
   };
 
@@ -38,7 +38,7 @@ const Day = (props) => {
         </p>
       </header>
       <div
-        className="flex-1 cursor-pointer"
+        className="cursor-pointer flex justify-center"
         onClick={() => {
           setDaySelected(day);
           setShowEventModal(true);
@@ -48,7 +48,7 @@ const Day = (props) => {
           <div
             key={idx}
             onClick={() => setSelectedEvent(evt)}
-            className={`bg-neutral-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}
+            className={`bg-neutral-200 w-40 p-1 text-gray-600 text-sm rounded mb-2.5 truncate flex justify-center`}
           >
             {evt.title}
           </div>
