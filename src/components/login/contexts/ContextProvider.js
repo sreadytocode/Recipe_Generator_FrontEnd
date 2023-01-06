@@ -39,6 +39,7 @@ export const ContextProvider = ({ children }) => {
   const [daySelected, setDaySelected] = useState(dayjs());
   const [showEventModal, setShowEventModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [dayEvents, setDayEvents] = useState([]);
   const [savedEvents, dispatchCalEvent] = useReducer(
     saveEventsReducer,
     [],
@@ -86,6 +87,7 @@ export const ContextProvider = ({ children }) => {
         setSelectedEvent,
         dispatchCalEvent,
         savedEvents,
+        dayEvents, setDayEvents
       }}
     >
       {children}
