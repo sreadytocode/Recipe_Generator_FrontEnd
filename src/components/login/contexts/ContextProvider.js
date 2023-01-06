@@ -32,15 +32,13 @@ export const ContextProvider = ({ children }) => {
   const [screenSize, setScreenSize] = useState(undefined);
   const [cuisines, setCuisines] = useState([]);
   const [diet, setDiet] = useState([]);
-  const [click, setClick] = useState(false);
+  const [click, setClick] = useState(false);  
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
   const [shoppingList, setShoppingList] = useState([]);
   const [monthIndex, setMonthIndex] = useState(dayjs().month());
   const [daySelected, setDaySelected] = useState(dayjs());
   const [showEventModal, setShowEventModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [dayEvents, setDayEvents] = useState([]);
-  // const [savedEvents] = useState([]);
   const [savedEvents, dispatchCalEvent] = useReducer(
     saveEventsReducer,
     [],
@@ -88,7 +86,6 @@ export const ContextProvider = ({ children }) => {
         setSelectedEvent,
         dispatchCalEvent,
         savedEvents,
-        dayEvents, setDayEvents
       }}
     >
       {children}

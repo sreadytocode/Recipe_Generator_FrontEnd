@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useStateContext } from '../../contexts/ContextProvider';
 import dayjs from 'dayjs';
 
 const Day = (props) => {
-  const { dayEvents, setDayEvents, setDaySelected, setShowEventModal, savedEvents, setSelectedEvent } = useStateContext();
+  const { setDaySelected, setShowEventModal, savedEvents, setSelectedEvent } = useStateContext();
   const { day, rowIdx } = props;
+  const [dayEvents, setDayEvents] = useState([]);
 
   const getCurrentDayClass = () => {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
@@ -12,12 +13,20 @@ const Day = (props) => {
       : "";
   };
 
+  
+// For some reason won't work with useState from useStateContext
   useEffect(() => {
+    
     const events = savedEvents.filter(
-      (evt) => dayjs(evt.day).format("DD-MM-YY") === day.format("DD-MM-YY")
-    );
+      (evt) => dayjs(evt.day).format("DD-MM-YY") === day.format("DD-MM-YY"))
+    
+    // console.log(events);
     setDayEvents(events);
+
   }, [savedEvents, day, setDayEvents]);
+
+
+  // console.log(dayEvents);
 
   return (
     <div className="border border-gray-200 flex flex-col">
