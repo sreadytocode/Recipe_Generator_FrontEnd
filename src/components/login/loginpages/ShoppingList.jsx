@@ -4,46 +4,14 @@ import "../Login.css";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const ShoppingList = () => {
-  const { favouriteRecipes, shoppingList, setShoppingList } = useStateContext();
+  const { shoppingList, setShoppingList } = useStateContext();
 
-  // const [shoppingList, setShoppingList] = useState([]);
-  console.log(favouriteRecipes);
-
-  // const quantities = [];
-  // favouriteRecipes.map((recipe) => quantities.push(recipe.quantities));
-
-  const quantities = [];
-  favouriteRecipes.map((recipe) => quantities.push(...recipe.quantities));
-  console.log(quantities);
-
-  const ingredientItems = quantities.map((quantity) => {
-    return {
-      name: quantity.ingredient.name,
-      amount: quantity.amount,
-      unit: quantity.unit,
-    };
-  });
-  console.log(ingredientItems);
-
-  const newShoppingList = [...shoppingList];
-  newShoppingList.push(...ingredientItems); // added spread operator to get individual objects.
-  setShoppingList(newShoppingList);
-  console.log(ingredientItems);
-
-  const removeItem = (item) => {
+  const removeItem = (ingredient) => {
     const newShoppingList = [...shoppingList];
-    const itemIndex = newShoppingList.indexOf(item);
-    newShoppingList.splice(itemIndex, 1);
+    const ingredientIndex = newShoppingList.indexOf(ingredient);
+    newShoppingList.splice(ingredientIndex, 1);
     setShoppingList(newShoppingList);
   };
-
-  // const newShoppingList = [...shoppingList, ingredientItems];
-
-  useEffect(() => {
-    setShoppingList(newShoppingList);
-  }, [newShoppingList, setShoppingList]);
-
-  // console.log(newShoppingList);
 
   return (
     <div className="grid grid-cols-5 gap-1">
@@ -52,15 +20,15 @@ const ShoppingList = () => {
       </div>
       <div className="col-start-2 col-end-6">
         <h1>Shopping List</h1>
-        {ingredientItems.map((ingredient, index) => {
+        {shoppingList.map((item, index) => {
           return (
             <div key={index}>
               <p>
-                {ingredient.unit} {ingredient.name}
+                {item.unit} {item.name}
               </p>
               <button
                 className="border-solid border-2"
-                onClick={() => removeItem(ingredient)}
+                onClick={() => removeItem(item)}
               >
                 x
               </button>
