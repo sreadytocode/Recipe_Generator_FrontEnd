@@ -136,7 +136,7 @@
     transition: 250ms;
   }
 
-  button {
+  .login-btn {
     display: none;
   }
 }

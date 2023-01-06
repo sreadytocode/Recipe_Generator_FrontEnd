@@ -7,6 +7,7 @@ const FavouriteRecipes = () => {
   const { favouriteRecipes, shoppingList, setShoppingList } = useStateContext();
 
   const clickHandler = (recipe) => {
+    console.log(recipe.id);
     const ingredientItems =
       recipe &&
       recipe.quantities.map((quantity) => {
@@ -16,8 +17,11 @@ const FavouriteRecipes = () => {
           unit: quantity.unit,
         };
       });
+
     const newShoppingList = [...shoppingList];
-    newShoppingList.push(...ingredientItems); // added spread operator to get individual objects.
+
+    newShoppingList.push(...ingredientItems);
+
     setShoppingList(newShoppingList);
   };
 
