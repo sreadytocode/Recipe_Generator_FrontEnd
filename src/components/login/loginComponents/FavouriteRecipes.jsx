@@ -13,13 +13,12 @@ const FavouriteRecipes = () => {
       </div>
       <div className="col-start-2 col-end-6">
         <h1>Favourite Recipes</h1>
-        {console.log(favouriteRecipes)}
-        {favouriteRecipes.map((recipe) => {
+        {favouriteRecipes.map((recipe, index) => {
           return (
-            <>
+            <div key={index}>
               <h1>{recipe.name}</h1>
               <img src={recipe.image} alt={recipe.name} width="200" />
-            </>
+            </div>
           );
         })}
       </div>
