@@ -4,7 +4,24 @@ import "../Login.css";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const FavouriteRecipes = () => {
-  const { favouriteRecipes } = useStateContext();
+  const { favouriteRecipes, shoppingList, setShoppingList } = useStateContext();
+
+  const clickHandler = (recipe) => {
+    const ingredientItems =
+      recipe &&
+      recipe.quantities.map((quantity) => {
+        return {
+          name: quantity.ingredient.name,
+          amount: quantity.amount,
+          unit: quantity.unit,
+        };
+      });
+    const newShoppingList = [...shoppingList];
+    newShoppingList.push(...ingredientItems); // added spread operator to get individual objects.
+    setShoppingList(newShoppingList);
+  };
+
+  console.log(shoppingList);
 
   return (
     <div className="grid grid-cols-5 gap-1">
@@ -18,6 +35,7 @@ const FavouriteRecipes = () => {
             <div key={index}>
               <h1>{recipe.name}</h1>
               <img src={recipe.image} alt={recipe.name} width="200" />
+              <button onClick={() => clickHandler(recipe)}>+</button>
             </div>
           );
         })}
