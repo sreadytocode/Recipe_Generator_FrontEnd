@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState } from 'react';
 import { MdDeleteForever, MdClose } from "react-icons/md";
 import { useStateContext } from '../../contexts/ContextProvider';
 

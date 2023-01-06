@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useReducer, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useReducer } from "react";
 import dayjs from "dayjs";
 
 const StateContext = createContext();
@@ -40,6 +40,7 @@ export const ContextProvider = ({ children }) => {
   const [showEventModal, setShowEventModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [dayEvents, setDayEvents] = useState([]);
+  // const [savedEvents] = useState([]);
   const [savedEvents, dispatchCalEvent] = useReducer(
     saveEventsReducer,
     [],
