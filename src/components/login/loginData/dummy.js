@@ -37,10 +37,10 @@ export const links = [
           name: 'shopping list',
           icon: <AiOutlineShoppingCart />,
         },
-        {
-          name: 'pantry',
-          icon: <GiFruitBowl />,
-        },
+        // {
+        //   name: 'pantry',
+        //   icon: <GiFruitBowl />,
+        // },
       ],
     },
     {
@@ -50,10 +50,10 @@ export const links = [
           name: 'meal planner',
           icon: <AiOutlineCalendar />,
         },
-        {
-            name: 'electricity calculator',
-            icon: <GiElectric />,
-          }
+        // {
+        //     name: 'electricity calculator',
+        //     icon: <GiElectric />,
+        //   }
       ],
     },
   ];

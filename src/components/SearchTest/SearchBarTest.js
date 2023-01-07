@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {TextField, Button} from "@mui/material";
+// npm install @mui/material @emotion/react @emotion/styled
 
 const SearchBarContainer = styled.div`
   width: 100%;
@@ -56,7 +57,7 @@ const SearchBarTest = ({setRecipes}) => {
                     border: 'none', 
                     borderRadius: '5px'
                 },
-                width: { lg: '1100px', xs: '400px'},
+                width: { lg: '500px', xs: '400px', xl: '1100px'},
                 backgroundColor: '#fff',
                 borderRadius: '4px',
             }}
@@ -71,12 +72,12 @@ const SearchBarTest = ({setRecipes}) => {
                     bgcolor: '#9B2226',
                     color: '#fff',
                     textTransform: 'none',
-                    width: { lg: '175px', xs: '80px' },
+                    width: { lg: '100px', xs: '80px', xl: '100px' },
                     fontSize: { lg: '20px', xs: '14px' },
                     height: '56px',
                     position: "absolute",
                     right: 1, 
-                    marginRight: 17
+                    marginRight: 30
                     // right: '0',
 
                 }}
