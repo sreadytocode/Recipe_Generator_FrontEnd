@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from "react";
 import Title from "../../reusable/Title";
-import { useStateContext } from '../../login/contexts/ContextProvider';
+import { useStateContext } from "../../login/contexts/ContextProvider";
 import styled from "styled-components";
-import RecipeRating from '../../reusable/RecipeRating';
-import { Link } from 'react-router-dom';
+import RecipeRating from "../../reusable/RecipeRating";
+import { Link } from "react-router-dom";
 
 const RecipeCard = styled.div`
   width: 20rem;
@@ -44,9 +44,8 @@ const RatingContainer = styled.div`
   align-items: center;
 `;
 
-
 const Japanese = () => {
-  const {cuisines, setCuisines } = useStateContext();
+  const { cuisines, setCuisines } = useStateContext();
 
   useEffect(() => {
     fetch("http://localhost:8080/recipes")
@@ -54,44 +53,44 @@ const Japanese = () => {
       .then((cuisineData) => setCuisines(cuisineData));
   }, [setCuisines]);
 
-  if (! cuisines) return "Sorry will have recipes soon!";
+  if (!cuisines) return "Sorry will have recipes soon!";
 
   const japaneseCuisine = cuisines.map((recipe, index) => {
     if (recipe.cuisineType === "JAPANESE") {
       return (
-      <Link  key={recipe.id} to={`/recipe/${recipe.id}`}>
-        <RecipeCard key={index}>
-          <RecipeTitleContainer>
-            <RecipeTitle>{recipe.name}</RecipeTitle>
-          </RecipeTitleContainer>
+        <Link key={recipe.id} to={`/recipe/${recipe.id}`}>
+          <RecipeCard key={index}>
+            <RecipeTitleContainer>
+              <RecipeTitle>{recipe.name}</RecipeTitle>
+            </RecipeTitleContainer>
 
-        <RecipeImage src={recipe.image} alt="recipe" />
-        <RecipeInfoContainer>
-          <RatingContainer>
-            <p>Rating:</p>
-            <RecipeRating recipeRating={recipe.rating} />
-          </RatingContainer>
+            <RecipeImage src={recipe.image} alt="recipe" />
+            <RecipeInfoContainer>
+              <RatingContainer>
+                <p>Rating:</p>
+                <RecipeRating recipeRating={recipe.rating} />
+              </RatingContainer>
 
-          <p>Servings: {recipe.serving}</p>
-        </RecipeInfoContainer>
-      </RecipeCard>
-    </Link>
-      )
-  } else {
-    return null;
-  }
+              <p>Servings: {recipe.serving}</p>
+            </RecipeInfoContainer>
+          </RecipeCard>
+        </Link>
+      );
+    } else {
+      return null;
+    }
   });
 
   return (
-    <div >
-      <div className='japanese text-red-500'>
+    <div>
+      <div className="japanese text-[#111827]">
         <Title text={"Japanese"} />
       </div>
-      <div className='inline flex gap-5 justify-center justify-evenly mt-20 align'>
+      <div className="inline flex gap-5 justify-center justify-evenly mt-20 align">
         {japaneseCuisine}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Japanese
+export default Japanese;

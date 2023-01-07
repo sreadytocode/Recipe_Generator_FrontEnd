@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 import Title from "../../reusable/Title";
-import { useStateContext } from '../../login/contexts/ContextProvider';
+import { useStateContext } from "../../login/contexts/ContextProvider";
 import styled from "styled-components";
-import RecipeRating from '../../reusable/RecipeRating';
-import { Link } from 'react-router-dom';
+import RecipeRating from "../../reusable/RecipeRating";
+import { Link } from "react-router-dom";
 
 const RecipeCard = styled.div`
   width: 20rem;
@@ -45,52 +45,52 @@ const RatingContainer = styled.div`
 `;
 
 const Italian = () => {
-    const {cuisines, setCuisines } = useStateContext();
+  const { cuisines, setCuisines } = useStateContext();
 
-    useEffect(() => {
-      fetch("http://localhost:8080/recipes")
-        .then((res) => res.json())
-        .then((cuisineData) => setCuisines(cuisineData));
-    }, [setCuisines]);
-  
-    if (! cuisines) return "Sorry will have recipes soon!";
-  
-    const italianCuisine = cuisines.map((recipe, index) => {
-      if (recipe.cuisineType === "ITALIAN") {
-        return (
-        <Link  key={recipe.id} to={`/recipe/${recipe.id}`}>
+  useEffect(() => {
+    fetch("http://localhost:8080/recipes")
+      .then((res) => res.json())
+      .then((cuisineData) => setCuisines(cuisineData));
+  }, [setCuisines]);
+
+  if (!cuisines) return "Sorry will have recipes soon!";
+
+  const italianCuisine = cuisines.map((recipe, index) => {
+    if (recipe.cuisineType === "ITALIAN") {
+      return (
+        <Link key={recipe.id} to={`/recipe/${recipe.id}`}>
           <RecipeCard key={index}>
             <RecipeTitleContainer>
               <RecipeTitle>{recipe.name}</RecipeTitle>
             </RecipeTitleContainer>
-  
-          <RecipeImage src={recipe.image} alt="recipe" />
-          <RecipeInfoContainer>
-            <RatingContainer>
-              <p>Rating:</p>
-              <RecipeRating recipeRating={recipe.rating} />
-            </RatingContainer>
-  
-            <p>Servings: {recipe.serving}</p>
-          </RecipeInfoContainer>
-        </RecipeCard>
-      </Link>
-        )
+
+            <RecipeImage src={recipe.image} alt="recipe" />
+            <RecipeInfoContainer>
+              <RatingContainer>
+                <p>Rating:</p>
+                <RecipeRating recipeRating={recipe.rating} />
+              </RatingContainer>
+
+              <p>Servings: {recipe.serving}</p>
+            </RecipeInfoContainer>
+          </RecipeCard>
+        </Link>
+      );
     } else {
       return null;
     }
-    });
+  });
 
   return (
-    <div >
-      <div className='italian text-black'>
+    <div>
+      <div className="italian text-[#881337]">
         <Title text={"Italian"} />
       </div>
-      <div className='inline flex gap-5 justify-center justify-evenly mt-20 align'>
+      <div className="inline flex gap-5 justify-center justify-evenly mt-20 align">
         {italianCuisine}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Italian
+export default Italian;

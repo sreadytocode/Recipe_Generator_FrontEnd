@@ -66,7 +66,9 @@ const RecipePage = ({ recipes }) => {
   const clickHandler = (recipe) => {
     const newFavouriteRecipes = [...favouriteRecipes];
     newFavouriteRecipes.push(recipe);
-    setFavouriteRecipes(newFavouriteRecipes);
+
+    const removeDuplicateRecipes = [...new Set(newFavouriteRecipes)];
+    setFavouriteRecipes(removeDuplicateRecipes);
   };
 
   return (
