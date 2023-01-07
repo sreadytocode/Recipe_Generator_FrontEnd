@@ -12,10 +12,10 @@ const RecipesContainer = styled.div`
   margin-top: 3rem;
 `;
 
-const Home = ({ recipes }) => {
+const Home = ({ recipes, setRecipes }) => {
   return (
     <>
-      <SearchBarTest />
+      <SearchBarTest recipes = {recipes} setRecipes = {setRecipes}/>
       <div className="home">
         <Title text={"Our Top Rated Recipes"} />
       </div>
