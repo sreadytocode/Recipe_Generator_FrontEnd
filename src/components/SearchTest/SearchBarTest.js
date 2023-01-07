@@ -9,7 +9,6 @@ const SearchBarContainer = styled.div`
   justify-content: center;
   background: #b8fcda;
   height: 6rem;
-  position: relative;
 `;
 
 // const SearchField = styled.h2`
@@ -25,10 +24,10 @@ const SearchBarContainer = styled.div`
 //   border: 1px solid black;
 // `;
 
-const SearchBarTest = ({recipes, setRecipes}) => {
+const SearchBarTest = ({setRecipes}) => {
   const [inputText, setInputText] = useState("");
 
-  const handleTheSearch = async () => {
+  const inputHandler = async () => {
     if (inputText) {
         fetch('http://localhost:8080/recipes')
         .then((res) => res.json())
@@ -41,7 +40,7 @@ const SearchBarTest = ({recipes, setRecipes}) => {
             || recipe.dietType.toLowerCase().includes(inputText)
         );
 
-        setInputText('');
+        setInputText("");
         setRecipes(searchedRecipes);
         })
     } 
@@ -81,7 +80,7 @@ const SearchBarTest = ({recipes, setRecipes}) => {
                     // right: '0',
 
                 }}
-                onClick={handleTheSearch}
+                onClick={inputHandler}
             >
                 Search
             </Button>
