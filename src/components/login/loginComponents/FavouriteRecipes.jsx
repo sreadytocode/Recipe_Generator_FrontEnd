@@ -19,16 +19,16 @@ const FavouriteRecipes = () => {
         };
       });
     const newShoppingList = [...shoppingList];
-
     ingredientItems.map((item) => newShoppingList.push(item));
-    const duplicatesRemoved = newShoppingList.filter(
+    console.log(newShoppingList);
+    const filteredShoppingList = newShoppingList.filter(
       (item, index) => item.id === index + 1
     );
-    setShoppingList(duplicatesRemoved);
+    setShoppingList(filteredShoppingList);
 
-    console.log(ingredientItems);
-    console.log(newShoppingList);
-    console.log(shoppingList);
+    // console.log(ingredientItems);
+    // console.log(newShoppingList);
+    // console.log(shoppingList);
   };
 
   return (

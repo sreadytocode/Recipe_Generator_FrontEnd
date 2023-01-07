@@ -6,6 +6,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 
 const ShoppingList = () => {
   const { shoppingList, setShoppingList } = useStateContext();
+  console.log(shoppingList);
 
   const removeItem = (ingredient) => {
     const newShoppingList = [...shoppingList];
