@@ -28,22 +28,27 @@ const FavouriteRecipes = () => {
   console.log(shoppingList);
 
   return (
-    <div className="grid grid-cols-5 gap-1">
+    <div className="grid grid-cols-6 gap-3">
       <div className="col-start-1 col-end-2">
         <Login />
       </div>
-      <div className="col-start-2 col-end-6">
-        <h1>Favourite Recipes</h1>
+      <h1 className="text-3xl text-center col-start-2 my-4 mt-8 col-end-7">
+        Favourite Recipes
+      </h1>
+      <div className="col-start-2 col-end-7 mx-12">
         {favouriteRecipes.map((recipe, index) => {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center"
+            >
               <h1>{recipe.name}</h1>
               <img src={recipe.image} alt={recipe.name} width="200" />
               <button
-                className="bg-green-light hover:bg-green-dark text-white font-bold py-2 px-4 rounded"
+                className="bg-green-light hover:bg-green-dark text-white font-bold py-2 px-4 rounded w-48"
                 onClick={() => clickHandler(recipe)}
               >
-                Add to Shopping List +
+                + Shopping List
               </button>
             </div>
           );
