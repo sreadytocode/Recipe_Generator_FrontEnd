@@ -75,9 +75,9 @@ const SearchBarTest = ({setRecipes}) => {
                     width: { lg: '100px', xs: '80px', xl: '100px' },
                     fontSize: { lg: '20px', xs: '14px' },
                     height: '56px',
-                    position: "absolute",
+                    position: "relative",
                     right: 1, 
-                    marginRight: 30
+                    marginLeft: 2
                     // right: '0',
 
                 }}
