@@ -25,6 +25,8 @@ code {
 
 .comment-form-title {
   font-size: 22px;
+  margin-left: 235px;
+  font-style: oblique;
 
 }
 
@@ -37,14 +39,20 @@ code {
 }
 
 .comment-form-button {
-  width: 40px;
-  font-size: 15px;
-  padding: 15px 50px;
+  width: 150px;
+  font-size: 18px;
   background: #009f4f;
   border-radius: 5px;
   color: white;
-  /* display: flex; */
-  text-align:justify;
+  vertical-align: center;
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+ 
 }
 
 .comment-form-button:hover:enabled {
@@ -58,12 +66,12 @@ code {
 }
 
 .comment-form-cancel-button {
-  margin-left: 10px;
+  margin-left: 0px;
 }
 
 .comment {
   display: flex;
-  margin-bottom: 28px;
+  margin-bottom: 8px;
 }
 
 .comment-image-container {
@@ -106,7 +114,7 @@ code {
 
 .comment-action:hover {
   text-decoration: underline;
-  color: #009f4f;
+  color:  #07ef26;
 }
 
 .replies {
