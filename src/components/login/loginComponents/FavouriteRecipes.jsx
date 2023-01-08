@@ -21,10 +21,18 @@ const FavouriteRecipes = () => {
     const newShoppingList = [...shoppingList];
     ingredientItems.map((item) => newShoppingList.push(item));
     console.log(newShoppingList);
-    const filteredShoppingList = newShoppingList.filter(
-      (item, index) => item.id === index + 1
-    );
-    setShoppingList(filteredShoppingList);
+
+    const uniqueShoppingList = newShoppingList.filter((ListItem, index) => {
+      return (
+        index === newShoppingList.findIndex((item) => ListItem.id === item.id)
+      );
+    });
+    setShoppingList(uniqueShoppingList);
+
+    // const filteredShoppingList = newShoppingList.filter(
+    //   (item, index) => item.id === index + 1
+    // );
+    // setShoppingList(filteredShoppingList);
 
     // console.log(ingredientItems);
     // console.log(newShoppingList);
