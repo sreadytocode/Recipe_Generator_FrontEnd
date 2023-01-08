@@ -18,13 +18,17 @@ const FavouriteRecipes = () => {
           unit: quantity.unit,
         };
       });
-
     const newShoppingList = [...shoppingList];
-
-    newShoppingList.push(...ingredientItems);
+    ingredientItems.map((item) => newShoppingList.push(item));
     console.log(newShoppingList);
-    const removeDuplicateItems = [...new Set(newShoppingList)];
-    setShoppingList(removeDuplicateItems);
+    const filteredShoppingList = newShoppingList.filter(
+      (item, index) => item.id === index + 1
+    );
+    setShoppingList(filteredShoppingList);
+
+    // console.log(ingredientItems);
+    // console.log(newShoppingList);
+    // console.log(shoppingList);
   };
 
   return (

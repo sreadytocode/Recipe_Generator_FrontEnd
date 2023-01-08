@@ -6,6 +6,10 @@ module.exports = {
       display: ["Open Sans", "sans-serif"],
       body: ["Open Sans", "sans-serif"],
     },
+    textColors: {
+      "primary-green": "#59BD8D",
+      "secondary-green": "#009F4F",
+    },
     extend: {
       fontSize: {
         14: "14px",

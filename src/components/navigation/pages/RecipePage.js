@@ -96,11 +96,13 @@ const RecipePage = ({ recipes }) => {
         <div className="w-2/3 mr-4">
           <RecipeImage src={recipe.image} alt="recipe" />
           <button
-            className="flex items-center mt-2 hover:bg-sky-700"
+            className="flex items-center mt-2 "
             onClick={() => clickHandler(recipe)}
           >
-            <AiFillHeart className="mr-2" />
-            Add to Favourites
+            <AiFillHeart className="mr-2" style={{ fill: "#59BD8D" }} />
+            <p className="text-green-500 hover:text-green-900">
+              Add to Favourites
+            </p>
           </button>
         </div>
 
