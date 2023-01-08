@@ -2,15 +2,15 @@ export const getComments = async () => {
     return [
       {
         id: "1",
-        body: "First comment",
-        username: "Claire",
+        body: "A fantastic Recipe",
+        username: "Ava",
         userId: "1",
         parentId: null,
         createdAt: "2021-08-16T23:00:33.010+02:00",
       },
       {
         id: "2",
-        body: "Second comment",
+        body: "Delicious!",
         username: "John",
         userId: "2",
         parentId: null,
@@ -18,7 +18,7 @@ export const getComments = async () => {
       },
       {
         id: "3",
-        body: "First comment first child",
+        body: "I cannot wait to try it",
         username: "John",
         userId: "2",
         parentId: "1",
@@ -26,7 +26,7 @@ export const getComments = async () => {
       },
       {
         id: "4",
-        body: "Second comment second child",
+        body: "Yummy!",
         username: "John",
         userId: "2",
         parentId: "2",
