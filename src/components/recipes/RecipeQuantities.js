@@ -21,6 +21,7 @@ const RecipeQuantities = ({ quantities }) => {
   const quantityList = quantities.map((quantity, index) => (
     <ListItem key={index}>
       <p>
+
         {quantity.amount} {quantity.unit} {quantity.ingredient.name}
       </p>
     </ListItem>

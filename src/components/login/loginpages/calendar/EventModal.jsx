@@ -4,13 +4,17 @@ import { useStateContext } from '../../contexts/ContextProvider';
 
 const EventModal = () => {
     const {daySelected, setShowEventModal, dispatchCalEvent, selectedEvent} = useStateContext();
-    const [title, setTitle] = useState(selectedEvent ? selectedEvent.title : "");
+    const [breakfast, setBreakfast] = useState(selectedEvent ? selectedEvent.breakfast : "");
+    const [lunch, setLunch] = useState(selectedEvent ? selectedEvent.lunch : "");
+    const [dinner, setDinner] = useState(selectedEvent ? selectedEvent.dinner : "");
 
     const handleSubmit = (e) => {
         // cancel default method
         e.preventDefault();
         const calendarEvent = {
-          title: title,
+          breakfast: breakfast,
+          lunch: lunch,
+          dinner:dinner,
           day: daySelected.valueOf(),
           id: selectedEvent ? selectedEvent.id : Date.now(),
         };
@@ -48,15 +52,42 @@ const EventModal = () => {
             <div> 
               <h1 className='font-semibold text-xl'>Enter your recipe</h1>
             </div>
+            <div className='breakfast'>
+              <p>Breakfast</p>
             <input
               type="text"
-              name="title"
+              name="breakfast"
               placeholder="Add Recipe"
-              value={title}
+              value={breakfast}
               required
-              className="pt-3 border-0 text-gray-600 text-xl font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
-              onChange={(e) => setTitle(e.target.value)}
+              className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
+              onChange={(e) => setBreakfast(e.target.value)}
             />
+            </div>
+            <div className='lunch'>
+              <p>Lunch</p>
+            <input
+              type="text"
+              name="lunch"
+              placeholder="Add Recipe"
+              value={lunch}
+              required
+              className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
+              onChange={(e) => setLunch(e.target.value)}
+            />
+            </div>
+            <div className='dinner'>
+              <p>Dinner</p>
+            <input
+              type="text"
+              name="dinner"
+              placeholder="Add Recipe"
+              value={dinner}
+              required
+              className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
+              onChange={(e) => setDinner(e.target.value)}
+            />
+            </div>
             <p>{daySelected.format("dddd, MMMM DD")}</p>
           </div>
         </div>
