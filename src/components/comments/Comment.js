@@ -2,6 +2,7 @@ import { deleteComment, updateComment } from "./dummyDataComments/CommentsData";
 import CommentForm from "./CommentForm";
 import Comments from "./Comments";
 import './Comments.css';
+import avo from './avo-user.png';
 
 
 const Comment  = ({comment, replies, currentUserId, deleteComment, updateComment,activeComment, addComment, setActiveComment, parentId = null}) => {
@@ -17,7 +18,7 @@ const Comment  = ({comment, replies, currentUserId, deleteComment, updateComment
   return (
      <div className="comment">
       <div className="comment-image-container">
-        <img src="user-icon.png" alt="user image"/>
+        <img src={avo} alt="user image"/>
       </div>
       <div className="comment-right-part">
         <div className="comment-content">
