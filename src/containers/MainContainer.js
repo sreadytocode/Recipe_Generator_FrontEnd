@@ -44,7 +44,7 @@ const MainContainer = () => {
         <Navbar />
         <main className="border-solid border-red min-h-screen">
           <Routes>
-            <Route path="/" exact element={<Home recipes={recipes} />} />
+            <Route path="/" exact element={<Home recipes={recipes} setRecipes={setRecipes}/>} />
             <Route
               path="/recipe/:id"
               element={
