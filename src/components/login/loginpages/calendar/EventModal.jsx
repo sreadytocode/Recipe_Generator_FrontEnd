@@ -64,6 +64,10 @@ const EventModal = ({recipes}) => {
                     value = { recipe.name } > { recipe.name } </option>
                 )
                 } 
+                else {
+                  return null;
+                }
+    
             })  
         }
          </select>
@@ -96,9 +100,12 @@ const EventModal = ({recipes}) => {
                 return (<
                     option key = { recipe.id }
                     value = { recipe.name } > { recipe.name } </option>
-                )
-                } 
+                )} 
+                  else {
+                return null;
+              }
             })  
+
         }
         </select>
 
@@ -124,6 +131,9 @@ const EventModal = ({recipes}) => {
                     value = { recipe.name } > { recipe.name } </option>
                 )
                 } 
+                else {
+                  return null;
+                }
             })  
         }
         </select>
