@@ -61,7 +61,7 @@ const MainContainer = () => {
             <Route path="/None" element={<None/>}/>
             <Route path="/profile" element={<Profile />} />
             <Route path="/shopping list" element={<ShoppingList />} />
-            <Route path="/meal planner" element={<Calendar />} />
+            <Route path="/meal planner" element={<Calendar recipes={recipes} />} />
             <Route path="/favourite recipes" element={<FavouriteRecipes />} />
             <Route path="/pantry" element={<Pantry />} />
             <Route path="/French" element={<French/>}/>

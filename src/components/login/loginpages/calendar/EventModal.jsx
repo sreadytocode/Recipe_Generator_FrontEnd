@@ -2,7 +2,7 @@ import React, {useState } from 'react';
 import { MdDeleteForever, MdClose } from "react-icons/md";
 import { useStateContext } from '../../contexts/ContextProvider';
 
-const EventModal = () => {
+const EventModal = ({recipes}) => {
     const {daySelected, setShowEventModal, dispatchCalEvent, selectedEvent} = useStateContext();
     const [breakfast, setBreakfast] = useState(selectedEvent ? selectedEvent.breakfast : "");
     const [lunch, setLunch] = useState(selectedEvent ? selectedEvent.lunch : "");
@@ -53,8 +53,21 @@ const EventModal = () => {
               <h1 className='font-semibold text-xl'>Enter your recipe</h1>
             </div>
             <div className='breakfast'>
-              <p>Breakfast</p>
-            <input
+              <p><b>Breakfast</b></p>
+            <select defaultValue ="" onChange={(e) => setBreakfast(e.target.value)}>  
+            <option value = "" disabled > Choose a recipe </option> {
+              recipes.map(recipe => {
+
+                if (recipe.mealType === "BREAKFAST") {
+                return (<
+                    option key = { recipe.id }
+                    value = { recipe.name } > { recipe.name } </option>
+                )
+                } 
+            })  
+        }
+         </select>
+            {/* <input
               type="text"
               name="breakfast"
               placeholder="Add Recipe"
@@ -62,11 +75,11 @@ const EventModal = () => {
               required
               className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
               onChange={(e) => setBreakfast(e.target.value)}
-            />
+            /> */}
             </div>
             <div className='lunch'>
-              <p>Lunch</p>
-            <input
+              <p><b>Lunch</b></p>
+            {/* <input
               type="text"
               name="lunch"
               placeholder="Add Recipe"
@@ -74,11 +87,25 @@ const EventModal = () => {
               required
               className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
               onChange={(e) => setLunch(e.target.value)}
-            />
+            /> */}
+             <select defaultValue ="" onChange={(e) => setLunch(e.target.value)}>  
+            <option value = "" disabled > Choose a recipe </option> {
+              recipes.map(recipe => {
+
+                if (recipe.mealType === "LUNCH") {
+                return (<
+                    option key = { recipe.id }
+                    value = { recipe.name } > { recipe.name } </option>
+                )
+                } 
+            })  
+        }
+        </select>
+
             </div>
             <div className='dinner'>
-              <p>Dinner</p>
-            <input
+              <p><b>Dinner</b></p>
+            {/* <input
               type="text"
               name="dinner"
               placeholder="Add Recipe"
@@ -86,7 +113,20 @@ const EventModal = () => {
               required
               className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
               onChange={(e) => setDinner(e.target.value)}
-            />
+            /> */}
+            <select defaultValue ="" onChange={(e) => setDinner(e.target.value)}>  
+              <option value = "" disabled > Choose a recipe </option> {
+              recipes.map(recipe => {
+
+                if (recipe.mealType === "DINNER") {
+                return (<
+                    option key = { recipe.id }
+                    value = { recipe.name } > { recipe.name } </option>
+                )
+                } 
+            })  
+        }
+        </select>
             </div>
             <p>{daySelected.format("dddd, MMMM DD")}</p>
           </div>
