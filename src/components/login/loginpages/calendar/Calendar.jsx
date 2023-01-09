@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import Login from "../../Login";
 import "../../Login.css";
-import { useStateContext } from '../../contexts/ContextProvider';
-import CalendarHeader from './CalendarHeader';
-import Month from './Month';
+import { useStateContext } from "../../contexts/ContextProvider";
+import CalendarHeader from "./CalendarHeader";
+import Month from "./Month";
 import { getMonth } from "../../utils/util";
-import EventModal from './EventModal';
+import EventModal from "./EventModal";
 
-const Calendar = ({recipes}) => {
+const Calendar = ({ recipes }) => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex, showEventModal, activeMenu } = useStateContext();
 
@@ -19,8 +19,9 @@ const Calendar = ({recipes}) => {
     <div className="grid grid-cols-7 gap-1">
       
       <div className="col-start-1 col-end-2">
-        <Login/>
+        <Login />
       </div>
+
 
       <div className= {
         activeMenu
@@ -29,16 +30,17 @@ const Calendar = ({recipes}) => {
           >
       {showEventModal && <EventModal recipes = {recipes}/>}
         <div >
+
           <div>
-            <CalendarHeader/>
+            <CalendarHeader />
           </div>
           <div>
-            <Month month={currentMonth}/> 
+            <Month month={currentMonth} />
           </div>
-        </div> 
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Calendar
+export default Calendar;

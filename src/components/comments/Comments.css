@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family:"Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -25,9 +25,8 @@ code {
 
 .comment-form-title {
   font-size: 22px;
-  margin-left: 450px;
+  text-align: center;
   font-style: bold;
-
 }
 
 .comment-form-textarea {
@@ -52,7 +51,6 @@ code {
   display: inline-block;
   line-height: 50px;
   text-align: center;
- 
 }
 
 .comment-form-button:hover:enabled {
@@ -114,7 +112,7 @@ code {
 
 .comment-action:hover {
   text-decoration: underline;
-  color:  #07ef26;
+  color: #07ef26;
 }
 
 .replies {
