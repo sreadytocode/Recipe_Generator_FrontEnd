@@ -50,9 +50,12 @@ const Day = (props) => {
             onClick={() => setSelectedEvent(evt)}
             className={`bg-neutral-200 w-40 p-3 text-gray-600 text-sm rounded mb-2.5 truncate flex justify-column`}
           >
-            <b>B:</b>{evt.breakfast} /
-            <b>L:</b>{evt.lunch} /
-            <b>D:</b> {evt.dinner}
+            <div className="flex flex-col">
+            <b>Breakfast:</b>{evt.breakfast} 
+            <b>Lunch:</b>{evt.lunch} 
+            <b>Dinner:</b> {evt.dinner}
+
+          </div>
           </div>
 
           

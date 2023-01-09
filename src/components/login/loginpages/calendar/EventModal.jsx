@@ -28,7 +28,7 @@ const EventModal = ({recipes}) => {
 
   return (
     <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center">
-      <form className="bg-white rounded-lg shadow-2xl w-1/4">
+      <form className="bg-white rounded-lg shadow-2xl min-w-[200px]">
         <header className="px-4 py-2 flex justify-end">
           <div className="text-gray-400">
             {selectedEvent && (
@@ -48,13 +48,13 @@ const EventModal = ({recipes}) => {
           </div>
         </header>
         <div className="p-3">
-          <div className="grid grid-cols-1/5 items-end gap-y-7">
+          <div className="grid grid-cols-1/5 items-end gap-y-7 flex">
             <div> 
               <h1 className='font-semibold text-xl'>Enter your recipe</h1>
             </div>
             <div className='breakfast'>
               <p><b>Breakfast</b></p>
-            <select defaultValue ="" onChange={(e) => setBreakfast(e.target.value)}>  
+            <select className="w-[100%]" defaultValue ="" onChange={(e) => setBreakfast(e.target.value)}>  
             <option value = "" disabled > Choose a recipe </option> {
               recipes.map(recipe => {
 
@@ -64,6 +64,10 @@ const EventModal = ({recipes}) => {
                     value = { recipe.name } > { recipe.name } </option>
                 )
                 } 
+                else {
+                  return null;
+                }
+    
             })  
         }
          </select>
@@ -96,9 +100,12 @@ const EventModal = ({recipes}) => {
                 return (<
                     option key = { recipe.id }
                     value = { recipe.name } > { recipe.name } </option>
-                )
-                } 
+                )} 
+                  else {
+                return null;
+              }
             })  
+
         }
         </select>
 
@@ -114,7 +121,7 @@ const EventModal = ({recipes}) => {
               className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
               onChange={(e) => setDinner(e.target.value)}
             /> */}
-            <select defaultValue ="" onChange={(e) => setDinner(e.target.value)}>  
+            <select className="w-[100%]" defaultValue ="" onChange={(e) => setDinner(e.target.value)}>  
               <option value = "" disabled > Choose a recipe </option> {
               recipes.map(recipe => {
 
@@ -124,6 +131,9 @@ const EventModal = ({recipes}) => {
                     value = { recipe.name } > { recipe.name } </option>
                 )
                 } 
+                else {
+                  return null;
+                }
             })  
         }
         </select>
