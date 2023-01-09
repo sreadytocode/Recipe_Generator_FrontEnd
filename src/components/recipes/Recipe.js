@@ -2,6 +2,8 @@ import React from "react";
 import RecipeRating from "../reusable/RecipeRating";
 import styled from "styled-components";
 
+
+
 //Box to conatain all recipe information
 const RecipeCard = styled.div`
   width: 20rem;
@@ -56,7 +58,6 @@ const Recipe = ({ recipe }) => {
           <p>Rating:</p>
           <RecipeRating recipeRating={recipe.rating} />
         </RatingContainer>
-
         <p>Servings: {recipe.serving}</p>
       </RecipeInfoContainer>
     </RecipeCard>
