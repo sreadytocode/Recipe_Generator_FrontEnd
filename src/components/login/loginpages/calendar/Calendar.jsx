@@ -7,7 +7,7 @@ import Month from './Month';
 import { getMonth } from "../../utils/util";
 import EventModal from './EventModal';
 
-const Calendar = () => {
+const Calendar = ({recipes}) => {
   const [currentMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex, showEventModal } = useStateContext();
 
@@ -22,7 +22,7 @@ const Calendar = () => {
       </div>
 
       <div className="col-start-2 col-end-7">
-      {showEventModal && <EventModal />}
+      {showEventModal && <EventModal recipes = {recipes}/>}
         <div >
           <div>
             <CalendarHeader/>
