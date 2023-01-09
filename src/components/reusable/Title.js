@@ -8,7 +8,10 @@ const PageTitle = styled.h1`
 
 const Title = ({ text }) => {
   return (
-    <div className="backdrop-blur-3xl px-8">
+    <div
+      className="backdrop-blur-3xl px-8 text-center 
+    leading-12"
+    >
       <PageTitle>{text}</PageTitle>
     </div>
   );

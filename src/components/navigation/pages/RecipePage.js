@@ -6,7 +6,7 @@ import RecipeInstructions from "../../recipes/RecipeInstructions";
 import RecipeQuantities from "../../recipes/RecipeQuantities";
 import { AiFillHeart } from "react-icons/ai";
 import { useStateContext } from "../../login/contexts/ContextProvider";
-import Comments from '../../comments/Comments';
+import Comments from "../../comments/Comments";
 // import RecipeIngredients from "../../recipes/RecipeIngredients";
 
 //Container for all recipe information
@@ -113,7 +113,7 @@ const RecipePage = ({ recipes }) => {
       <RecipeDescription>{recipe.description}</RecipeDescription>
 
       <RecipeInstructions instructions={recipe.instructions} />
-      <Comments currentUserId="1"/>
+      <Comments currentUserId="1" />
     </RecipeSection>
   );
 };
