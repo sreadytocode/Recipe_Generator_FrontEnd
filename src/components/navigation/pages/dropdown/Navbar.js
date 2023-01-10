@@ -127,16 +127,17 @@ const Navbar = () => {
             </li>
           )}
 
-          
-          <li className="nav-item">
-            <Link
-              to="/Login"
-              className="nav-links-mobile"
-              onClick={closeMobileMenu}
-            >
-              Login
-            </Link>
-          </li>
+          {!isAuthenticated && ( 
+            <li className="nav-item">
+              <Link
+                to="/Login"
+                className="nav-links-mobile"
+                onClick={closeMobileMenu}
+              >
+                Login
+              </Link>
+            </li>
+          )}
 
 
         </ul>
