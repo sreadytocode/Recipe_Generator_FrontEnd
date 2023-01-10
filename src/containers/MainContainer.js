@@ -16,8 +16,13 @@ import Pakistani from "../components/recipes/cuisines/Pakistani";
 import Japanese from "../components/recipes/cuisines/Japanese";
 import American from "../components/recipes/cuisines/American";
 import Italian from "../components/recipes/cuisines/Italian";
-import { Profile, FavouriteRecipes, Welcome } from "../components/login/loginComponents";
+import {
+  Profile,
+  FavouriteRecipes,
+  Welcome,
+} from "../components/login/loginComponents";
 import { ShoppingList, Calendar, Pantry } from "../components/login/loginpages";
+import { useStateContext } from "../components/login/contexts/ContextProvider";
 
 const MainContainer = () => {
   // const [recipes, setRecipes] = useState(recipesData);
@@ -38,13 +43,21 @@ const MainContainer = () => {
       .then((ingredientsData) => setIngredients(ingredientsData));
   }, []);
 
+  const getRecipeById = (id) => {
+    recipes.find((recipe) => recipe.id === id);
+  };
+
   return (
     <>
       <Router>
         <Navbar />
         <main className="border-solid border-red min-h-screen">
           <Routes>
-            <Route path="/" exact element={<Home recipes={recipes} setRecipes={setRecipes}/>} />
+            <Route
+              path="/"
+              exact
+              element={<Home recipes={recipes} setRecipes={setRecipes} />}
+            />
             <Route
               path="/recipe/:id"
               element={
@@ -58,17 +71,20 @@ const MainContainer = () => {
             <Route path="keto" exact element={<Keto />} />
             <Route path="vegetarian" exact element={<Vegetarian />} />
             <Route path="vegan" exact element={<Vegan />} />
-            <Route path="/None" element={<None/>}/>
+            <Route path="/None" element={<None />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/shopping list" element={<ShoppingList />} />
-            <Route path="/meal planner" element={<Calendar recipes={recipes} />} />
+            <Route
+              path="/meal planner"
+              element={<Calendar recipes={recipes} />}
+            />
             <Route path="/favourite recipes" element={<FavouriteRecipes />} />
             <Route path="/pantry" element={<Pantry />} />
-            <Route path="/French" element={<French/>}/>
-            <Route path="/Pakistani" element={<Pakistani/>}/>
-            <Route path="/Japanese" element={<Japanese/>}/>
-            <Route path="/American" element={<American/>}/>
-            <Route path="/Italian" element={<Italian/>}/>
+            <Route path="/French" element={<French />} />
+            <Route path="/Pakistani" element={<Pakistani />} />
+            <Route path="/Japanese" element={<Japanese />} />
+            <Route path="/American" element={<American />} />
+            <Route path="/Italian" element={<Italian />} />
           </Routes>
         </main>
       </Router>

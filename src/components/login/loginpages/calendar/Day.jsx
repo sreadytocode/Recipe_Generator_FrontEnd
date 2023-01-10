@@ -1,9 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useStateContext } from '../../contexts/ContextProvider';
-import dayjs from 'dayjs';
+import React, { useEffect, useState } from "react";
+import { useStateContext } from "../../contexts/ContextProvider";
+import dayjs from "dayjs";
+import { Link } from "react-router-dom";
 
 const Day = (props) => {
-  const { setDaySelected, setShowEventModal, savedEvents, setSelectedEvent } = useStateContext();
+  const {
+    setDaySelected,
+    setShowEventModal,
+    savedEvents,
+    setSelectedEvent,
+    getRecipeById,
+    recipes,
+  } = useStateContext();
+
   const { day, rowIdx } = props;
   const [dayEvents, setDayEvents] = useState([]);
 
@@ -13,18 +22,15 @@ const Day = (props) => {
       : "";
   };
 
-  
-// For some reason won't work with useState from useStateContext
+  // For some reason won't work with useState from useStateContext
   useEffect(() => {
-    
     const events = savedEvents.filter(
-      (evt) => dayjs(evt.day).format("DD-MM-YY") === day.format("DD-MM-YY"))
-    
+      (evt) => dayjs(evt.day).format("DD-MM-YY") === day.format("DD-MM-YY")
+    );
+
     // console.log(events);
     setDayEvents(events);
-
   }, [savedEvents, day, setDayEvents]);
-
 
   // console.log(dayEvents);
 
@@ -41,7 +47,7 @@ const Day = (props) => {
         className="flex-1 cursor-pointer flex justify-center"
         onClick={() => {
           setDaySelected(day);
-          setShowEventModal(true);
+          setShowEventModal(true); // changed this to false should be true
         }}
       >
         {dayEvents.map((evt, idx) => (
@@ -51,18 +57,25 @@ const Day = (props) => {
             className={`bg-neutral-200 w-40 p-3 text-gray-600 text-sm rounded mb-2.5 truncate flex justify-column`}
           >
             <div className="flex flex-col">
-            <b>Breakfast:</b>{evt.breakfast} 
-            <b>Lunch:</b>{evt.lunch} 
-            <b>Dinner:</b> {evt.dinner}
+              <b>Breakfast:</b>
+              <Link to={`/recipe/${evt.breakfast}`} recipes={recipes}>
+                {evt.breakfast && getRecipeById(evt.breakfast).name}
+              </Link>
 
+              <b>Lunch:</b>
+              <Link to={`/recipe/${evt.lunch}`} recipes={recipes}>
+                {evt.lunch && getRecipeById(evt.lunch).name}
+              </Link>
+              <b>Dinner:</b>
+              <Link to={`/recipe/${evt.dinner}`} recipes={recipes}>
+                {evt.dinner && getRecipeById(evt.dinner).name}
+              </Link>
+            </div>
           </div>
-          </div>
-
-          
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Day
+export default Day;
