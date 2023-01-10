@@ -118,7 +118,7 @@ const Navbar = () => {
 
           {isAuthenticated && (
             <li className="nav-item">
-              <Link to="/login" className="nav-links" onclick={closeMobileMenu}>
+              <Link to="/login" className="nav-links" onClick={closeMobileMenu}>
                 Dashboard
               </Link>
               {/* <Link to="/profile" className="nav-links" onclick={() => logoutWithRedirect()}>Profile</Link> */}
