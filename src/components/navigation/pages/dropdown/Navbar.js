@@ -16,12 +16,7 @@ const Navbar = () => {
   const [dietDropdown, setDietdropdown] = useState(false);
 
   //Auth0 login and logout
-  const {
-    user,
-    isAuthenticated,
-    loginWithRedirect,
-    logout,
-  } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   const logoutWithRedirect = () =>
     logout({
@@ -36,33 +31,33 @@ const Navbar = () => {
   //When the viewport is less than 960 then the dropdown will not be vissible
   const onMouseEnterCuisine = () => {
     if (window.innerWidth < 960) {
-      setCuisinedropdown (false);
+      setCuisinedropdown(false);
     } else {
-      setCuisinedropdown (true);
+      setCuisinedropdown(true);
     }
   };
 
   const onMouseLeaveCuisine = () => {
     if (window.innerWidth < 960) {
-      setCuisinedropdown (false);
+      setCuisinedropdown(false);
     } else {
-      setCuisinedropdown (false);
+      setCuisinedropdown(false);
     }
   };
 
   const onMouseEnterDiet = () => {
     if (window.innerWidth < 960) {
-      setDietdropdown (false);
+      setDietdropdown(false);
     } else {
-      setDietdropdown (true);
+      setDietdropdown(true);
     }
   };
 
   const onMouseLeaveDiet = () => {
     if (window.innerWidth < 960) {
-      setDietdropdown (false);
+      setDietdropdown(false);
     } else {
-      setDietdropdown (false);
+      setDietdropdown(false);
     }
   };
 
@@ -104,10 +99,12 @@ const Navbar = () => {
             {cuisineDropdown && <Cuisine />}
           </li>
 
-          <li className="nav-item"
+          <li
+            className="nav-item"
             onMouseEnter={onMouseEnterDiet}
-            onMouseLeave={onMouseLeaveDiet}>
-              <Link className="nav-links" onClick={closeMobileMenu}>
+            onMouseLeave={onMouseLeaveDiet}
+          >
+            <Link className="nav-links" onClick={closeMobileMenu}>
               Dietary <i className="fas fa-caret-down" />
             </Link>
             {dietDropdown && <Diet />}
@@ -119,21 +116,20 @@ const Navbar = () => {
             </Link>
           </li>
 
-          {isAuthenticated && ( 
+          {isAuthenticated && (
             <li className="nav-item">
               <Link to="/login" className="nav-links" onclick={closeMobileMenu}>
                 Dashboard
               </Link>
               {/* <Link to="/profile" className="nav-links" onclick={() => logoutWithRedirect()}>Profile</Link> */}
-          
             </li>
           )}
 
-          <li>
+          <li className="nav-item">
             <LogOutButton />
           </li>
 
-          {!isAuthenticated && ( 
+          {!isAuthenticated && (
             <li className="nav-item">
               <Link
                 to="/Login"
@@ -144,14 +140,9 @@ const Navbar = () => {
               </Link>
               {/* <Button id="" onClick={() => loginWithRedirect({})}></Button> */}
               <Button />
-            
             </li>
-            
           )}
-
-
         </ul>
-     
       </nav>
     </>
   );

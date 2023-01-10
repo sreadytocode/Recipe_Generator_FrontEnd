@@ -8,18 +8,20 @@ const LogoutButton = () => {
 
   return (
     <>
-    {isAuthenticated && (
-      <Link to="/">
-        <button onClick={() => logout({ returnTo: window.location.origin })}>
-         Log Out
-        </button>
-    </Link>
-    )}
+      {isAuthenticated && (
+        <Link to="/">
+          <button
+            className="btn login-btn"
+            onClick={() => logout({ returnTo: window.location.origin })}
+          >
+            Log Out
+          </button>
+        </Link>
+      )}
     </>
   );
 };
 
 export default LogoutButton;
-
 
 //Log out, may not keep
