@@ -9,33 +9,36 @@ import { getConfig } from "./config";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-
-const onRedirectCallback = (appState) => {
-    history.push(
-      appState && appState.returnTo ? appState.returnTo : window.location.pathname
-    );
-  };
+// const onRedirectCallback = (appState) => {
+//     history.push(
+//       appState && appState.returnTo ? appState.returnTo : window.location.pathname
+//     );
+//   };
   
   // Please see https://auth0.github.io/auth0-react/interfaces/Auth0ProviderOptions.html
   // for a full list of the available properties on the provider
   const config = getConfig();
   
-  const providerConfig = {
-    domain: config.domain,
-    clientId: config.clientId,
-    ...(config.audience ? { audience: config.audience } : null),
-    redirectUri: window.location.origin,
-    onRedirectCallback,
-  };
+  // const providerConfig = {
+  //   domain: "dev-rsoxskkjwqd0an2t.uk.auth0.com",
+  //   clientId: "jLFVKQwZAa79uK6pRg78e2sUqoWawu6i",
+  //   // ...(config.audience ? { audience: config.audience } : null),
+  //   redirectUri: window.location.origin
+  //   // onRedirectCallback,
+  // };
 
 
 root.render(
     <React.StrictMode>
-            <Auth0Provider {...providerConfig}>
-                <ContextProvider>
-                    <App />   
-                </ContextProvider>
-            </Auth0Provider>
+    <Auth0Provider 
+        domain= {config.domain}
+        clientId= {config.clientId}
+        redirectUri= {window.location.origin}>
+
+            <ContextProvider>
+                <App />   
+            </ContextProvider>
+        </Auth0Provider>
     </React.StrictMode>
         );
 
