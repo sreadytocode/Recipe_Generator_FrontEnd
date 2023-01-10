@@ -1,57 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap");
 
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-form{
-    display: block;
-    background-color: #fff;
-    box-shadow: 1px 1px 3px 2px #ddd;
-    margin: 40px auto;
-    max-width: 600px;
-    max-height: 700px;
-    padding: 25px 40px;
+form {
+  display: block;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px 2px #ddd;
+  margin: 40px auto;
+  max-width: 600px;
+  max-height: 700px;
+  padding: 25px 40px;
 }
 
-form input, textarea{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 10px auto;
-    padding: 10px;
-    font-family: "Poppins";
-    background-color: #f3f3f3;
-    border: 1px solid #ddd;
-    color:#000;
-    opacity: 1;
+form input,
+textarea {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  font-family: "Poppins";
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  color: #000;
+  opacity: 1;
 }
 
-::-moz-placeholder{
-    opacity: 1;
-    color: #000;
+::-moz-placeholder {
+  opacity: 1;
+  color: #000;
 }
 
-input::placeholder{
-    color: #000;
-    opacity: 1;
+input::placeholder {
+  color: #000;
+  opacity: 1;
 }
 
-form span{
-    color: green;
+form span {
+  color: green;
 }
 
-form button{
-    height: 30px;
-    width: 80px;
-    align-items: center;
-    border: 1px solid #ddd;
-    background-color: rgb(29, 185, 237);
-    color: #f1f1f1;
-    cursor: pointer;
+.submit-button {
+  height: 30px;
+  width: 100px;
+  align-items: center;
+  border: 1px solid #ddd;
+  background-color: #59bd8b;
+  color: white;
+  cursor: pointer;
 }
