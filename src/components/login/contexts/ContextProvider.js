@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useReducer,
+} from "react";
 import dayjs from "dayjs";
 
 const StateContext = createContext();
@@ -32,7 +38,8 @@ export const ContextProvider = ({ children }) => {
   const [screenSize, setScreenSize] = useState(undefined);
   const [cuisines, setCuisines] = useState([]);
   const [diet, setDiet] = useState([]);
-  const [click, setClick] = useState(false);  
+  const [click, setClick] = useState(false);
+  const [recipes, setRecipes] = useState([]);
   const [favouriteRecipes, setFavouriteRecipes] = useState([]);
   const [shoppingList, setShoppingList] = useState([]);
   const [monthIndex, setMonthIndex] = useState(dayjs().month());
@@ -44,6 +51,12 @@ export const ContextProvider = ({ children }) => {
     [],
     initEvents
   );
+
+  useEffect(() => {
+    fetch("http://localhost:8080/recipes")
+      .then((res) => res.json())
+      .then((recipeData) => setRecipes(recipeData));
+  }, []);
 
   // ////////////////////////////////////////////////////////////////
   // useEffects for calendar
@@ -57,8 +70,17 @@ export const ContextProvider = ({ children }) => {
     }
   }, [showEventModal]);
 
+  const getRecipeById = (id) => {
+    return recipes.find((recipe) => {
+      console.log(recipe);
+      console.log(id);
+      console.log(recipe.id);
+      return recipe.id == id;
+    });
+  };
+
   // ///////////////////////////////////////////////////////////
-// Put states defined/need here
+  // Put states defined/need here
   return (
     <StateContext.Provider
       value={{
@@ -86,6 +108,9 @@ export const ContextProvider = ({ children }) => {
         setSelectedEvent,
         dispatchCalEvent,
         savedEvents,
+        recipes,
+        setRecipes,
+        getRecipeById,
       }}
     >
       {children}

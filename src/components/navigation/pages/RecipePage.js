@@ -61,6 +61,7 @@ const RecipePage = ({ recipes }) => {
   id = Number(id);
   //The param number is compared to the recipe.id using find method.
   const recipe = recipes.find((recipe) => recipe.id === id);
+  console.log(recipes);
 
   const { favouriteRecipes, setFavouriteRecipes } = useStateContext();
 
