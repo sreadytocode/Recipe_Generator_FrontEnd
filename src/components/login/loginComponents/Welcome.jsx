@@ -22,8 +22,8 @@ const Welcome = () => {
         <div
           className={
             activeMenu
-              ? "col-start-2 col-end-7 login"
-              : "col-start-1 col-end-7 login"
+              ? "col-start-2 col-end-7 login text-white mt-12"
+              : "col-start-1 col-end-7 login text-white "
           }
         >
           <Title text={"Welcome to your dashboard"} />
@@ -33,32 +33,46 @@ const Welcome = () => {
       <section
         className={
           activeMenu
-            ? "flex gap-6 flex-wrap justify-center mt-6 ml-[210px]"
-            : "flex gap-6 flex-wrap justify-center mt-6"
+            ? "flex gap-12 flex-wrap justify-center mt-12 ml-[210px]"
+            : "flex gap-12 flex-wrap justify-center mt-12"
         }
       >
         <Link to="/profile">
-          <div className="w-48 h-48 border-solid border-green-500 flex flex-col items-center border-2 pt-3">
+          <div className="w-60 h-60 p-6 border-solid border-green-500 flex flex-col items-center justify-center border-2">
             <CgProfile size={50} style={{ fill: "#59BD8D" }} />
-            <p className="text-center">View Profile</p>
+            <h3 className="text-center text-xl font-bold mt-2">Profile</h3>
+            <p className="mt-2 text-center">
+              View and update your profile information
+            </p>
           </div>
         </Link>
         <Link to="/favourite recipes">
-          <div className="w-48 h-48 border-solid border-green-500 flex flex-col items-center border-2 pt-3">
+          <div className="w-60 h-60 p-6 border-solid border-green-500 flex flex-col items-center justify-center border-2 p-4">
             <AiFillHeart size={50} style={{ fill: "#59BD8D" }} />
-            <p className="text-center">Favourite Recipes</p>
+            <h3 className="text-center text-xl font-bold mt-2">
+              Favourite Recipes
+            </h3>
+            <p className="mt-2 text-center">
+              See all the recipes you have saved
+            </p>
           </div>
         </Link>
         <Link to="/shopping list">
-          <div className="w-48 h-48 border-solid border-green-500 flex flex-col items-center border-2 pt-3">
+          <div className="w-60 h-60 p-6 border-solid border-green-500 flex flex-col justify-center items-center border-2 p-4">
             <AiOutlineShoppingCart size={50} style={{ fill: "#59BD8D" }} />
-            <p className="text-center">Shopping List</p>
+            <h3 className="text-center text-xl font-bold mt-2">
+              Shopping List
+            </h3>
+            <p className="mt-2 text-center">
+              View list of ingredients for favourite recipes
+            </p>
           </div>
         </Link>
         <Link to="/meal planner">
-          <div className="w-48 h-48 border-solid border-green-500 flex flex-col items-center border-2 pt-3">
+          <div className="w-60 h-60 p-6 border-solid border-green-500 flex flex-col justify-center items-center border-2 p-4">
             <AiOutlineCalendar size={50} style={{ fill: "#59BD8D" }} />
-            <p className="text-center">Meal Planner</p>
+            <h3 className="text-center text-xl font-bold mt-2">Meal Planner</h3>
+            <p className="mt-2 text-center">Save recipes to your calendar</p>
           </div>
         </Link>
       </section>

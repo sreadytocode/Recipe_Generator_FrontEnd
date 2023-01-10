@@ -1,18 +1,12 @@
 import React from "react";
-import styled from "styled-components";
-
-const PageTitle = styled.h1`
-  font-size: 4rem;
-  font-weight: bold;
-`;
 
 const Title = ({ text }) => {
   return (
     <div
-      className="backdrop-blur-3xl px-8 text-center 
-    leading-12"
+      className="backdrop-blur-3xl p-4 text-center 
+    leading-12 sm:p-3"
     >
-      <PageTitle>{text}</PageTitle>
+      <h1 className="lg:text-6xl font-bold m:text-5xl">{text}</h1>
     </div>
   );
 };
