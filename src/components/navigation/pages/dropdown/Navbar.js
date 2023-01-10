@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Button } from "../../../reusable/Button";
+import LogOutButton from "../../../reusable/LogOutButton";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import Cuisine from "./Cuisine";
 import Diet from "./Diet";
 import Logo from "../../../../images/logo.svg";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -12,6 +14,19 @@ const Navbar = () => {
   //Sets the dropdown menu of on line 46. If dropdown === true then render the DropDown component. Initial value set to false.
   const [cuisineDropdown, setCuisinedropdown] = useState(false);
   const [dietDropdown, setDietdropdown] = useState(false);
+
+  //Auth0 login and logout
+  const {
+    user,
+    isAuthenticated,
+    loginWithRedirect,
+    logout,
+  } = useAuth0();
+
+  const logoutWithRedirect = () =>
+    logout({
+      returnTo: window.location.origin,
+    });
 
   //Sets the state of the hamburger and cross icons and toggles back and forth
   const handleClick = () => setClick(!click);
@@ -104,6 +119,15 @@ const Navbar = () => {
             </Link>
           </li>
 
+          {isAuthenticated && ( 
+            <li className="nav-item">
+              <Link to="/welcome" className="nav-links" onclick={closeMobileMenu}>
+                Dashboard
+              </Link>
+            </li>
+          )}
+
+          
           <li className="nav-item">
             <Link
               to="/Login"
@@ -113,8 +137,11 @@ const Navbar = () => {
               Login
             </Link>
           </li>
+
+
         </ul>
         <Button />
+        <LogOutButton />
       </nav>
     </>
   );

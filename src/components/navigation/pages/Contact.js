@@ -6,6 +6,9 @@ import swal from 'sweetalert';
 
 import "./contact.css";
 
+
+//recaptcha needs some time. T_T
+
 const Contact = () => {
 
 
