@@ -121,11 +121,17 @@ const Navbar = () => {
 
           {isAuthenticated && ( 
             <li className="nav-item">
-              <Link to="/welcome" className="nav-links" onclick={closeMobileMenu}>
+              <Link to="/login" className="nav-links" onclick={closeMobileMenu}>
                 Dashboard
               </Link>
+              {/* <Link to="/profile" className="nav-links" onclick={() => logoutWithRedirect()}>Profile</Link> */}
+          
             </li>
           )}
+
+          <li>
+            <LogOutButton />
+          </li>
 
           {!isAuthenticated && ( 
             <li className="nav-item">
@@ -136,13 +142,16 @@ const Navbar = () => {
               >
                 Login
               </Link>
+              {/* <Button id="" onClick={() => loginWithRedirect({})}></Button> */}
+              <Button />
+            
             </li>
+            
           )}
 
 
         </ul>
-        <Button />
-        <LogOutButton />
+     
       </nav>
     </>
   );

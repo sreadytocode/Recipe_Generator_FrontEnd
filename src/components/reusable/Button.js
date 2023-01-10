@@ -11,12 +11,12 @@ export function Button() {
   return (
     <>
     {!isAuthenticated && (
-      <Link to="/welcome">
-        <button className="btn login-btn" onClick={() => loginWithRedirect()}>
+
+        <Link className="btn login-btn" onClick={() => loginWithRedirect()}>
           <i className="fas fa-user mr-2" />
           Login
-        </button>
-      </Link>
+        </Link>
+ 
     )}
     </>
   );
