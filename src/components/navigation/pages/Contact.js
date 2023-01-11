@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 // npm i sweetalert --save
 import swal from "sweetalert";
+// npm install react-google-recaptcha
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import "./contact.css";
