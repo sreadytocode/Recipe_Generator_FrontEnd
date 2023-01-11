@@ -39,20 +39,20 @@ const EventModal = ({ recipes }) => {
           <div className="text-gray-400">
             {selectedEvent && (
               <button
-                className="w-10 bg-red-500 mr-1"
+                className="w-10 bg-red-500 mr-1 h-[40px]"
                 onClick={() => {
                   dispatchCalEvent({ type: "delete", payload: selectedEvent });
                   setShowEventModal(false);
                 }}
               >
-                <MdDeleteForever className="w-9" />
+                <MdDeleteForever className="w-9" style={{ fill: "#FFFFFF" }} />
               </button>
             )}
             <button
               onClick={() => setShowEventModal(false)}
-              className="w-10 bg-green-500"
+              className="w-10 bg-green-500 h-[40px]"
             >
-              <MdClose className="w-9" />
+              <MdClose className="w-9" style={{ fill: "#FFFFFF" }} />
             </button>
           </div>
         </header>
