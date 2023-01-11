@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import RecipeRating from "../../reusable/RecipeRating";
@@ -10,6 +10,7 @@ import Comments from "../../comments/Comments";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 // import { Button } from "../../../reusable/Button";
+
 // import RecipeIngredients from "../../recipes/RecipeIngredients";
 
 //Container for all recipe information
@@ -63,10 +64,25 @@ const RecipePage = ({ recipes }) => {
   //Use params returns a string so we need to change the id into a Number
   id = Number(id);
   //The param number is compared to the recipe.id using find method.
-  const recipe = recipes.find((recipe) => recipe.id === id);
+
+  const [recipe, setRecipe] = useState(null);
+  useEffect(( )=>{
+    const foundRecipe = recipes.find((recipe) => recipe.id === id);
+    setRecipe (foundRecipe)
+  }, [recipes]) 
+  
+  // const {isAuthenticated } = useAuth0();
 
   const { favouriteRecipes, setFavouriteRecipes } = useStateContext();
+  
+  // recipies reload anomally
+  if (!recipes && !recipe) {
+    return "Recipies Loading"
 
+  }
+  if (!recipe ) {
+    return ("Recipes Loading")
+  }
   const clickHandler = (recipe) => {
     const newFavouriteRecipes = [...favouriteRecipes];
     newFavouriteRecipes.push(recipe);
@@ -75,9 +91,11 @@ const RecipePage = ({ recipes }) => {
     setFavouriteRecipes(removeDuplicateRecipes);
   };
 
+
   // const closeMobileMenu = () => setClick(false);
 
   const { loginWithRedirect, isAuthenticated } = useAuth0();
+
 
   return (
     <RecipeSection>
@@ -119,6 +137,7 @@ const RecipePage = ({ recipes }) => {
             className="flex items-center mt-2 "
             onClick={()=>clickHandler(recipe)}
           >
+
             <AiFillHeart className="mr-2" style={{ fill: "#59BD8D" }} />
             <p className="text-green-500 hover:text-green-900">
               Add to Favourites

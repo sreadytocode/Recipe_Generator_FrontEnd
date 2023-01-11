@@ -20,8 +20,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
   const config = getConfig();
   
   // const providerConfig = {
-  //   domain: "dev-rsoxskkjwqd0an2t.uk.auth0.com",
-  //   clientId: "jLFVKQwZAa79uK6pRg78e2sUqoWawu6i",
+  //   domain: "mmm",
+  //   clientId: mmm",
   //   // ...(config.audience ? { audience: config.audience } : null),
   //   redirectUri: window.location.origin
   //   // onRedirectCallback,

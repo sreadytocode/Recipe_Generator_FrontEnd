@@ -9,7 +9,8 @@ const RecipeLink = styled(Link)`
 `;
 
 const RecipesList = ({ recipes }) => {
-  const recipeComponents = recipes.map((recipe) => {
+
+  const recipeComponents = recipes && recipes.map((recipe) => {
     return (
       <RecipeLink key={recipe.id} to={`/recipe/${recipe.id}`}>
         <Recipe recipe={recipe} />
