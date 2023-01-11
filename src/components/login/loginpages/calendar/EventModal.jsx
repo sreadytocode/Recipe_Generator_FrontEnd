@@ -85,29 +85,13 @@ const EventModal = ({ recipes }) => {
                   }
                 })}
               </select>
-              {/* <input
-              type="text"
-              name="breakfast"
-              placeholder="Add Recipe"
-              value={breakfast}
-              required
-              className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
-              onChange={(e) => setBreakfast(e.target.value)}
-            /> */}
+           
             </div>
             <div className="lunch">
               <p>
                 <b>Lunch</b>
               </p>
-              {/* <input
-              type="text"
-              name="lunch"
-              placeholder="Add Recipe"
-              value={lunch}
-              required
-              className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
-              onChange={(e) => setLunch(e.target.value)}
-            /> */}
+           
               <select
                 defaultValue=""
                 onChange={(e) => setLunch(e.target.value)}
@@ -132,15 +116,7 @@ const EventModal = ({ recipes }) => {
               <p>
                 <b>Dinner</b>
               </p>
-              {/* <input
-              type="text"
-              name="dinner"
-              placeholder="Add Recipe"
-              value={dinner}
-              required
-              className="pt-3 border-0 text-gray-600 text-m font-semibold pb-2 border-b-2 border-gray-200 focus:outline-none focus:ring-0 "
-              onChange={(e) => setDinner(e.target.value)}
-            /> */}
+            
               <select
                 className="w-[100%]"
                 defaultValue=""
