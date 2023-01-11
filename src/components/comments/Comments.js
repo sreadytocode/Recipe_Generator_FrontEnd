@@ -8,6 +8,7 @@ import {
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 import "./Comments.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Comments = ({ currentUserId }) => {
   // we need to pass in our props the currentUserId (in App.js -- <Comments currentUserId="1"/>) which will pass from our parent
@@ -62,6 +63,8 @@ const Comments = ({ currentUserId }) => {
     });
   };
 
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+
   useEffect(() => {
     getCommentsApi().then((data) => {
       //the data will be the array of the backendComments
@@ -72,11 +75,22 @@ const Comments = ({ currentUserId }) => {
   return (
     <div className="comments">
       {/* <h3 className="comments-title">Comments</h3> */}
+
+      {!isAuthenticated && (
+        <div>
+        <div className="comment-form-title">Leave a comment:</div>
+        <CommentForm submitLabel="Submit Comment" handleSubmit={() => loginWithRedirect()} />
+      </div>
+
+      )}
+
+      {isAuthenticated && (
       <div>
         <div className="comment-form-title">Leave a comment:</div>
         <CommentForm submitLabel="Submit Comment" handleSubmit={addComment} />
       </div>
-      {/* the container for the list of comments: */}
+      )}
+     {/* the container for the list of comments: */}
       <div className="comments-container">
         {/* and inside we want map through our comments and some of the comments are actuallly replies, so here we must first of all get our roots for comments and then render 
        their replies this is why on the line 8 we have to create a new variable rootComments */}

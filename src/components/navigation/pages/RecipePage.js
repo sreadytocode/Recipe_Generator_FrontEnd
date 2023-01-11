@@ -7,6 +7,9 @@ import RecipeQuantities from "../../recipes/RecipeQuantities";
 import { AiFillHeart } from "react-icons/ai";
 import { useStateContext } from "../../login/contexts/ContextProvider";
 import Comments from "../../comments/Comments";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
+// import { Button } from "../../../reusable/Button";
 // import RecipeIngredients from "../../recipes/RecipeIngredients";
 
 //Container for all recipe information
@@ -72,6 +75,10 @@ const RecipePage = ({ recipes }) => {
     setFavouriteRecipes(removeDuplicateRecipes);
   };
 
+  // const closeMobileMenu = () => setClick(false);
+
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
+
   return (
     <RecipeSection>
       <RecipeInfoPanel>
@@ -96,15 +103,29 @@ const RecipePage = ({ recipes }) => {
       <ImageInstructionsContainer>
         <div className="w-2/3 mr-4">
           <RecipeImage src={recipe.image} alt="recipe" />
+          {!isAuthenticated && (
           <button
             className="flex items-center mt-2 "
-            onClick={() => clickHandler(recipe)}
+            onClick={() => loginWithRedirect()}
           >
             <AiFillHeart className="mr-2" style={{ fill: "#59BD8D" }} />
             <p className="text-green-500 hover:text-green-900">
               Add to Favourites
             </p>
           </button>
+          )} 
+          {isAuthenticated && (
+          <button
+            className="flex items-center mt-2 "
+            onClick={()=>clickHandler(recipe)}
+          >
+            <AiFillHeart className="mr-2" style={{ fill: "#59BD8D" }} />
+            <p className="text-green-500 hover:text-green-900">
+              Add to Favourites
+            </p>
+          </button>
+          )} 
+         
         </div>
 
         <RecipeQuantities quantities={recipe.quantities}></RecipeQuantities>

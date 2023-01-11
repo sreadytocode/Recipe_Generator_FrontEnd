@@ -3,7 +3,7 @@ export const getComments = async () => {
       {
         id: "1",
         body: "A fantastic Recipe",
-        username: "Ava",
+        username: "James",
         userId: "1",
         parentId: null,
         createdAt: "2022-12-16T23:00:33.010+02:00",
@@ -11,7 +11,7 @@ export const getComments = async () => {
       {
         id: "2",
         body: "Delicious!",
-        username: "John",
+        username: "Sara",
         userId: "2",
         parentId: null,
         createdAt: "2022-12-16T23:00:33.010+02:00",
@@ -19,7 +19,7 @@ export const getComments = async () => {
       {
         id: "3",
         body: "I cannot wait to try it",
-        username: "John",
+        username: "Ben",
         userId: "2",
         parentId: "1",
         createdAt: "2022-12-16T23:00:33.010+02:00",
@@ -27,7 +27,7 @@ export const getComments = async () => {
       {
         id: "4",
         body: "Yummy!",
-        username: "John",
+        username: "Takako",
         userId: "2",
         parentId: "2",
         createdAt: "2022-12-16T23:00:33.010+02:00",
