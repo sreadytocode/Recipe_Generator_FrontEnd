@@ -62,6 +62,7 @@ const RecipePage = ({ recipes }) => {
   //Use params returns a string so we need to change the id into a Number
   id = Number(id);
   //The param number is compared to the recipe.id using find method.
+
   const [recipe, setRecipe] = useState(null);
   useEffect(( )=>{
     const foundRecipe = recipes.find((recipe) => recipe.id === id);
@@ -69,6 +70,7 @@ const RecipePage = ({ recipes }) => {
   }, [recipes]) 
   
   // const {isAuthenticated } = useAuth0();
+
   const { favouriteRecipes, setFavouriteRecipes } = useStateContext();
   
   // recipies reload anomally

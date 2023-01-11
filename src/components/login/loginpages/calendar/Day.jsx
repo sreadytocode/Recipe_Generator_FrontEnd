@@ -60,16 +60,16 @@ const Day = (props) => {
           >
             <div className="flex flex-col">
               <b>Breakfast:</b>
-              <Link to={`/recipe/${evt.breakfast}`} recipes={recipes}>
+              <Link className="hover:text-green-700" to={`/recipe/${evt.breakfast}`} recipes={recipes}>
                 {evt.breakfast && getRecipeById(evt.breakfast).name}
               </Link>
 
               <b>Lunch:</b>
-              <Link to={`/recipe/${evt.lunch}`} recipes={recipes}>
+              <Link className="hover:text-green-700" to={`/recipe/${evt.lunch}`} recipes={recipes}>
                 {evt.lunch && getRecipeById(evt.lunch).name}
               </Link>
               <b>Dinner:</b>
-              <Link to={`/recipe/${evt.dinner}`} recipes={recipes}>
+              <Link className="hover:text-green-700" to={`/recipe/${evt.dinner}`} recipes={recipes}>
                 {evt.dinner && getRecipeById(evt.dinner).name}
               </Link>
             </div>
