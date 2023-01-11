@@ -116,6 +116,8 @@ const Navbar = () => {
             </Link>
           </li>
 
+
+
           {isAuthenticated && (
             <li className="nav-item">
               <Link to="/login" className="nav-links" onClick={closeMobileMenu}>
@@ -125,10 +127,18 @@ const Navbar = () => {
             </li>
           )}
 
+          {isAuthenticated && (
           <li className="nav-item">
-            <LogOutButton />
-          </li>
-
+            <LogOutButton/>
+            <img
+                      src={user.picture}
+                      alt="Profile"
+                      className="nav-user-profile d-inline-block rounded-full ml-3"
+                      width="50"
+                    />
+          </li>  
+          )}
+     
           {!isAuthenticated && (
             <li className="nav-item">
               <Link
