@@ -35,16 +35,18 @@ const Day = (props) => {
   // console.log(dayEvents);
 
   return (
-    <div className="border border-gray-200 flex flex-col">
+    <div className="border border-gray-200 flex flex-col grow">
       <header className="flex flex-col items-center">
         {/* Display day of the week on the first line */}
-        {rowIdx === 0 && <p className="text-sm mt-1">{day.format("ddd")}</p>}
+        {/* {rowIdx === 0 && <p className="text-sm mt-1">{day.format("ddd")}</p>} */}
+        {/* Removed {rowIdx === 0} to display all days */}
+        <p className="text-sm mt-1">{day.format("ddd")}</p>
         <p className={`text-sm p-1 my-1 text-center" ${getCurrentDayClass()}`}>
           {day.format("DD")}
         </p>
       </header>
       <div
-        className="flex-1 cursor-pointer flex justify-center"
+        className="grow shrink-0 min-h-[24px] cursor-pointer flex justify-center"
         onClick={() => {
           setDaySelected(day);
           setShowEventModal(true); // changed this to false should be true
@@ -54,7 +56,7 @@ const Day = (props) => {
           <div
             key={idx}
             onClick={() => setSelectedEvent(evt)}
-            className={`bg-neutral-200 w-40 p-3 text-gray-600 text-sm rounded mb-2.5 truncate flex justify-column`}
+            className={`bg-neutral-200 w-[90%] p-3 text-gray-600 text-sm rounded mb-2.5  justify-column`}
           >
             <div className="flex flex-col">
               <b>Breakfast:</b>
