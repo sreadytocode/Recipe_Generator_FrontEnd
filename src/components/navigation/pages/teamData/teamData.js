@@ -34,7 +34,7 @@ export const teamData = [
   {
     id: 5,
     img: "https://media.licdn.com/dms/image/D4E03AQGpabNoiiHvYg/profile-displayphoto-shrink_400_400/0/1669545779788?e=1678924800&v=beta&t=PPL79r5p5CznRG4cnPsOgCfeT96-elRg1gn9a5aEvoo",
-    name: "Takako Onazuka",
+    name: "Takako Onozuka",
     title: "Full stack Developer",
     linkedIn: "https://www.linkedin.com/in/takako-onozuka-566b9b257/",
     github: "https://github.com/taksgarby",

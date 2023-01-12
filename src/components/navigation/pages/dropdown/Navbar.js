@@ -135,6 +135,7 @@ const Navbar = () => {
                       alt="Profile"
                       className="nav-user-profile d-inline-block rounded-full ml-3"
                       width="50"
+                      referrerpolicy="no-referrer"
                     />
           </li>  
           )}

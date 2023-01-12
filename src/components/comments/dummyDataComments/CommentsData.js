@@ -41,7 +41,7 @@ export const getComments = async () => {
       body: text,
       parentId,
       userId: "1",
-      username: "John",
+      username: "Sara",
       createdAt: new Date().toISOString(),
     };
   };
