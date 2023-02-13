@@ -21,7 +21,7 @@ Initial planning of the application was done by creating diagrams of wireframes 
 
 ### Sitemap
 
-<img src="https://github.com/ST3V3NP3RRY/Recipe_Generator_FrontEnd/blob/main/Site%20map.png"
+<img src="https://github.com/ST3V3NP3RRY/Recipe_Generator_FrontEnd/blob/main/Site%20map.png">
 
 
 
