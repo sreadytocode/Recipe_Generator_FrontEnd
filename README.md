@@ -17,6 +17,11 @@ The main features of the application would alllow the users to:
 * There should be functionality within the application to allow users to view a meal planner for each day of the week and save recipes to that day.
 
 ### Planning
+Initial planning of the application was done by creating diagrams of wireframes and sitemaps to understand the architecture and components required to build the application. We also diagramed the relationship between the objects and relationships that would be needed to construct the dtatbase for the application.
+
+### Sitemap
+
+<img src="https://github.com/ST3V3NP3RRY/Recipe_Generator_FrontEnd/blob/main/Site%20map.png"
 
 
 
