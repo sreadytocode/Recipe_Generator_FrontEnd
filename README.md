@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Recipe Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Capstone Project
 
-## Available Scripts
+## Introduction
+This project is the culmination of all that we have learned while studying professional Software development with CodeClan. The main purpose of this app is to provide families with healthy recipes for meal planning as well as try to eliminate food waste by allowing the users to curate a shopping list of ingredients required to make each recipe from the application. The technologies used to build the application are as follows:
 
-In the project directory, you can run:
+* Front-end - HTML, Tailwind CSS, JavaScript and React to create and update the user interface
+* Back-end - Java, spring boot, H2 SQL (relational-database) to create the API and serve the data to the front end of the application.
 
-### `npm start`
+## MVP
+The main features of the application would alllow the users to:
+* Allow users to view recipes with clear instructions and ingredients required to make each of the recipes.
+* Users should be able to login to the application, implemented with OAuth2.
+* Once logged in users should be able to save their favourite recipes and save the ingredients required to a shopping list.
+* Users should then be able to delete the ingredient items they already have in stock.
+* There should be functionality within the application to allow users to view a meal planner for each day of the week and save recipes to that day.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Planning
+Initial planning of the application was done by creating diagrams of wireframes and sitemaps to understand the architecture and components required to build the application. We also diagramed the relationship between the objects and relationships that would be needed to construct the dtatbase for the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Sitemap
 
-### `npm test`
+<img src="https://github.com/ST3V3NP3RRY/Recipe_Generator_FrontEnd/blob/main/Site%20map.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Wireframes
 
-### `npm run build`
+<img src="https://github.com/ST3V3NP3RRY/Recipe_Generator_FrontEnd/blob/main/Wireframes.png">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Database object relationship diagram
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img src="https://github.com/ST3V3NP3RRY/Recipe_Generator_FrontEnd/blob/main/Database%20diagram.png">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
